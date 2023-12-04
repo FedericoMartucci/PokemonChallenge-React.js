@@ -1,0 +1,48 @@
+<svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_25_32)">
+<g clip-path="url(#clip1_25_32)">
+<path d="M0 40C0 37.7909 1.79086 36 4 36H60C62.2091 36 64 37.7909 64 40C64 42.2091 62.2091 44 60 44H4C1.79086 44 0 42.2091 0 40Z" fill="white"/>
+<g clip-path="url(#clip2_25_32)">
+<circle cx="16" cy="40" r="8" fill="white"/>
+<circle cx="16" cy="40" r="4" fill="#FF0000"/>
+</g>
+</g>
+<g clip-path="url(#clip3_25_32)">
+<path d="M0 24C0 21.7909 1.79086 20 4 20H60C62.2091 20 64 21.7909 64 24C64 26.2091 62.2091 28 60 28H4C1.79086 28 0 26.2091 0 24Z" fill="white"/>
+<g clip-path="url(#clip4_25_32)">
+<circle cx="48" cy="24" r="8" fill="white"/>
+<circle cx="48" cy="24" r="4" fill="#FF0000"/>
+</g>
+</g>
+<g clip-path="url(#clip5_25_32)">
+<path d="M0 8C0 5.79086 1.79086 4 4 4H60C62.2091 4 64 5.79086 64 8C64 10.2091 62.2091 12 60 12H4C1.79086 12 0 10.2091 0 8Z" fill="white"/>
+<g clip-path="url(#clip6_25_32)">
+<circle cx="16" cy="8" r="8" fill="white"/>
+<circle cx="16" cy="8" r="4" fill="#FF0000"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_25_32">
+<rect width="64" height="48" fill="white"/>
+</clipPath>
+<clipPath id="clip1_25_32">
+<rect width="64" height="16" fill="white" transform="translate(0 32)"/>
+</clipPath>
+<clipPath id="clip2_25_32">
+<rect width="16" height="16" fill="white" transform="translate(8 32)"/>
+</clipPath>
+<clipPath id="clip3_25_32">
+<rect width="64" height="16" fill="white" transform="translate(0 16)"/>
+</clipPath>
+<clipPath id="clip4_25_32">
+<rect width="16" height="16" fill="white" transform="translate(40 16)"/>
+</clipPath>
+<clipPath id="clip5_25_32">
+<rect width="64" height="16" fill="white"/>
+</clipPath>
+<clipPath id="clip6_25_32">
+<rect width="16" height="16" fill="white" transform="translate(8)"/>
+</clipPath>
+</defs>
+</svg>

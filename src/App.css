@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Montserrat;
+  background-color: red;
+  width: 100vw;
+  height: 11.11vh;
+  
+}
+a {
+  display: block;
+  width: 26.04%;
+}
+#logo {
+  width: 100%;
+  padding: 16px 8px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+.filter-text, filter-icon {
+  max-width: 100%;
+  padding: 16px 24px;
+}
+.toogle-bar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: white;
+  border-radius: 24px;
+  outline: 3px black solid;
+  width: 45.41vw;
+  height: 3vh;
+  margin: 40px 0px;
+  color: rgba(0, 0, 0, 0.30);
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#lupe-icon {
+  width: 32px;
+  opacity: 0.5;
+  padding: 8px 4px 8px 16px;
+}
+
+input, input:focus, input:active {
+  font-family: Montserrat;
+  color: rgba(0, 0, 0, 0.30);
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  color: black;
+}
+
+body {
+  background-image: url(background-image.png);
+  background-size: 240px 240px;
+}
