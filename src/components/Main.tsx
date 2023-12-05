@@ -1,6 +1,11 @@
+import Row from "./Row";
+
 function Main () {
     return (
-        <div></div>
+        <main>
+            <Row></Row>
+            <Row></Row>
+        </main>
     );
 }
 

@@ -4,7 +4,7 @@ function ToogleBar () {
     <form>
         <div className="toogle-bar">
             <img id="lupe-icon" src={Lupe} alt="Lupe"/>
-            <input type="text" placeholder="Search..." />
+            <input className='search-input' type="text" placeholder="Search..." />
         </div>
     </form>
     );

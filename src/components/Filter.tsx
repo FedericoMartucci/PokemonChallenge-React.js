@@ -3,8 +3,8 @@ import { ReactComponent as FilterSvg } from '../FilterBar.svg';
 function Filter () {
     return (
         <div className='filter'>
-            <FilterSvg></FilterSvg>
-            <span>Filter</span>
+            <FilterSvg className='filter-icon'></FilterSvg>
+            <span className='filter-text'>Filter</span>
         </div>
     );
 }

@@ -1,6 +1,13 @@
+import Pokemon from "./Pokemon";
+
 function Row () {
     return (
-        <div></div>
+        <div className="row">
+            <Pokemon></Pokemon>
+            <Pokemon></Pokemon>
+            <Pokemon></Pokemon>
+            <Pokemon></Pokemon>
+        </div>
     );
 }
 
