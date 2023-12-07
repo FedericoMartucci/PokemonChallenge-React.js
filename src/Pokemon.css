@@ -1,0 +1,115 @@
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon {
+    width: 320px;
+    height: 360px;
+    display: flex;
+    background-color: var(--background-color-secondary);
+    border-radius: 64px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+@media (max-width: 360px) {
+    .pokemon {
+        width: 80%;
+        height: 60%;
+    }
+}
+
+.pokemon-img {
+    width: 70%;
+    height: 60%;
+}
+
+.pokemon-name{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-family: Montserrat;
+    margin: 8px;
+}
+
+.pokemon-types {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: capitalize;
+    font-family: Montserrat;
+    gap: 8px;    
+}
+.pokemon-type {   
+    border-radius: 64px;
+    outline: auto;
+    outline-color: black;
+    padding: 4px;
+    color: var(--font-color-main);
+}
+
+.normal-pokemon-type, .normal-type:hover {
+    background-color: var(--normal-color-type);    
+}
+.fighting-pokemon-type, .fighting-type:hover {
+    background-color: var(--fighting-color-type);    
+}
+.flying-pokemon-type, .flying-type:hover {
+    background-color: var(--flying-color-type);    
+}
+.poison-pokemon-type, .poison-type:hover {
+    background-color: var(--poison-color-type);    
+}
+.ground-pokemon-type, .ground-type:hover {
+    background-color: var(--ground-color-type);    
+}
+.rock-pokemon-type, .rock-type:hover {
+    background-color: var(--rock-color-type);    
+}
+.bug-pokemon-type, .bug-type:hover {
+    background-color: var(--bug-color-type);    
+}
+.ghost-pokemon-type, .ghost-type:hover {
+    background-color: var(--ghost-color-type);    
+}
+.steel-pokemon-type, .steel-type:hover {
+    background-color: var(--steel-color-type);    
+}
+.fire-pokemon-type, .fire-type:hover {
+    background-color: var(--fire-color-type);    
+}
+.water-pokemon-type, .water-type:hover {
+    background-color: var(--water-color-type);    
+}
+.grass-pokemon-type, .grass-type:hover {
+    background-color: var(--grass-color-type);    
+}
+.electric-pokemon-type, .electric-type:hover {
+    background-color: var(--electric-color-type);    
+}
+.psychic-pokemon-type, .psychic-type:hover {
+    background-color: var(--psychic-color-type);    
+}
+.ice-pokemon-type, .ice-type:hover {
+    background-color: var(--ice-color-type);    
+}
+.dragon-pokemon-type, .dragon-type:hover {
+    background-color: var(--dragon-color-type);    
+}
+.dark-pokemon-type, .dark-type:hover {
+    background-color: var(--dark-color-type);    
+}
+.fairy-pokemon-type, .fairy-type:hover {
+    background-color: var(--fairy-color-type);    
+}
+.unknown-pokemon-type, .unknown-type:hover {
+    background-color: var(--unknown-color-type);    
+}
+.shadow-pokemon-type, .shadow-type:hover {
+    background-color: var(--shadow-color-type);    
+}

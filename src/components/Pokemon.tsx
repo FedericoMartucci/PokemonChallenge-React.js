@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getPokemons } from "../utils/api";
+import '../Pokemon.css';
 
 function Pokemon () {
     const [pokemons, setPokemons] = useState<any[]>([]);
@@ -10,11 +11,17 @@ function Pokemon () {
         })();
     }, []);
     return (
-        <div className="pokemon">
+        <div className="pokemon-list">
             {
                 pokemons.map((pokemon) => (
-                    <div key={pokemon.id}>
-                        <img src={pokemon.sprites.other.dream_world.front_default} alt="Pokemon" />
+                    <div className={`${pokemon.types[0].type.name}-type pokemon`} key={pokemon.id}>
+                        <img className='pokemon-img' src={pokemon.sprites.other.dream_world.front_default} alt="Pokemon" />
+                        <span className="pokemon-name">{pokemon.name}</span>
+                        <div className="pokemon-types">
+                            {pokemon.types.map((types: { type: { name: string; }; }) => (
+                                <span className={`pokemon-type ${types.type.name}-pokemon-type`}>{types.type.name}</span>
+                                ))}
+                        </div>
                     </div>
                 ))
             }

@@ -1,10 +1,9 @@
-import Row from "./Row";
+import Pokemon from "./Pokemon";
 
 function Main () {
     return (
         <main>
-            <Row></Row>
-            <Row></Row>
+            <Pokemon></Pokemon>
         </main>
     );
 }

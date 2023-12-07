@@ -1,5 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
+:root {
+  --normal-color-type: #A8A090;
+  --fighting-color-type: #A05038;
+  --flying-color-type: #98A8F0;
+  --poison-color-type: #B058A0;
+  --ground-color-type: #E9D6A4;
+  --rock-color-type: #B8A058;
+  --bug-color-type: #A8B820;
+  --ghost-color-type: #6060B0;
+  --steel-color-type: #A8A8C0;
+  --fire-color-type: #F05030;
+  --water-color-type: #3899F8;
+  --grass-color-type: #78C850;
+  --electric-color-type: #F8D030;
+  --psychic-color-type: #F870A0;
+  --ice-color-type: #58C8E0;
+  --dragon-color-type: #7860E0;
+  --dark-color-type: #7A5848;
+  --fairy-color-type: #E79FE7;
+  --unknown-color-type: #D2C21A;
+  --shadow-color-type: #5F5F5F;
+  --background-color-main: #FF0000;
+  --background-color-secondary: #FFFFFF;
+  --font-color-main: #FFFFFF;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +37,7 @@
   justify-content: space-between;
   align-items: center;
   font-family: Montserrat;
-  background-color: red;
+  background-color: var(--background-color-main);
   width: 100vw;
   height: 11.11vh;
 }
@@ -21,6 +47,7 @@ a {
   width: 26.04%;
   max-height: 100%;
   align-items: center;
+  margin-right: 8px;
 }
 
 #logo {
@@ -34,7 +61,7 @@ a {
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  color: white;
+  color: var(--font-color-main);
   width: 7;
   height: 66.6%;
   max-height: 100%;
@@ -51,7 +78,7 @@ a {
 .toogle-bar {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: var(--background-color-secondary);
   border-radius: 24px;
   outline: 0.1vw black solid;
   width: 45.41vw;
@@ -70,7 +97,7 @@ a {
 .search-input,
 .search-input:focus,
 .search-input:active {
-  background-color: white;
+  background-color: var(--background-color-2);
   width: 60%;
   max-width: 100%;
   max-height: 100%;
@@ -90,22 +117,10 @@ body {
   background-size: 240px 240px;
 }
 
-.pokemon {
-  display: flex;
-  width: 16.66vw;
-  height: 33.33vh;
-  background-color: white;
-  border-radius: 64px;
-  justify-content: center;
-  align-items: center;
-}
-
 main {
   display: flex;
-  flex-direction: column;
   width: 100vw;
   height: 88.89vh;
-
 }
 
 .row {
