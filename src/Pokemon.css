@@ -45,12 +45,15 @@
     font-family: Montserrat;
     gap: 8px;    
 }
-.pokemon-type {   
+.pokemon-type{   
     border-radius: 64px;
     outline: auto;
     outline-color: black;
     padding: 4px;
     color: var(--font-color-main);
+}
+.pokemon:hover {
+    color: var(--font-color-main)
 }
 
 .normal-pokemon-type, .normal-type:hover {

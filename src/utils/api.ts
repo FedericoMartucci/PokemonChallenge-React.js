@@ -10,7 +10,7 @@ type Result = {
 }
 
 export async function getPokemons (): Promise<any[]> {
-    const axiosRes = await api.get('?limit=8&offset=0.')
+    const axiosRes = await api.get('?limit=10&offset=0.')
     const results: Result[] = await axiosRes.data.results;
 
     const pokemons: any[] = await Promise.all(results.map(async result => {

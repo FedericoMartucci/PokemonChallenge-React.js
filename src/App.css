@@ -107,6 +107,7 @@ a {
   outline: none;
   border: none;
 }
+
 .search-input:focus {
   color: black;
 }
