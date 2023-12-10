@@ -15,7 +15,7 @@ function Pokemon () {
         <div className="pokemon-list">
             {
                 pokemons.map((pokemon) => (
-                    <PokemonCard {...pokemon} key={pokemon.id}/>
+                    <PokemonCard {...pokemon}/>
                 ))
             }
         </div>
