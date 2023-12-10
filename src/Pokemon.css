@@ -81,7 +81,6 @@
 }
 .pokemon-img-info {
     height: 90%;
-    margin-top: 10%;
     z-index: 1;
 }
 .pokemon-text-info {
@@ -201,8 +200,28 @@
         top: 46%;
     }
 }
-
-
+.pokemon-id {
+    margin-top: 20px;
+    width: 80%;
+    border-radius: 64px;
+    font-size: 3rem;
+    color: var(--background-color-secondary);
+    font-weight: 700;
+    font-family: Montserrat;
+}
+.pokemon-stat {
+    display: flex;
+    font-family: Montserrat;
+    font-size: 1rem;
+    text-transform: uppercase;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4px;
+}
+ul {
+    list-style: none;
+    width: 65%;
+}
 .normal-pokemon-type, .normal-type:hover {
     background-color: var(--normal-color-type);    
 }

@@ -4,7 +4,17 @@ import PokemonInfo from './PokemonInfo';
 import { createPortal } from 'react-dom';
 
 export default function PokemonCard(props: any) {
-   const { types, name, sprites, weight, height, stats, base_experience } = props
+   const { id, types, name, sprites, weight, height, stats, base_experience } = props
+   const pokemonInfoProps = {
+    id,
+    stats,
+    exp: base_experience,
+    type: types[0].type.name,
+    weight,
+    height,
+    name,
+    img: sprites.other.dream_world.front_default,
+  };
    const [showInfo, setShowInfo] = useState<boolean>(false);
    const handleToggleInfo = () => {
     setShowInfo(!showInfo);
@@ -20,7 +30,7 @@ export default function PokemonCard(props: any) {
                 ))}
             </div>
             {showInfo && createPortal(
-                <PokemonInfo stats={stats} exp={base_experience} type={types[0].type.name} weight={weight} height={height} name={name} img={sprites.other.dream_world.front_default} onClose={handleToggleInfo} />,
+                <PokemonInfo {...pokemonInfoProps} onClose={handleToggleInfo} />,
                 document.body
             )}
         </div>

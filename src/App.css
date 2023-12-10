@@ -24,6 +24,7 @@
   --background-color-main: #FF0000;
   --background-color-secondary: #FFFFFF;
   --font-color-main: #FFFFFF;
+  --to-width: 0%;
 }
 
 * {
