@@ -4,6 +4,7 @@ import Main from './components/Main';
 import NavBar from './components/NavBar';
 import PokemonInfo from './components/PokemonInfo';
 import Home from './components/Home';
+import Loader from './components/Loader';
 
 function App() {
   return (

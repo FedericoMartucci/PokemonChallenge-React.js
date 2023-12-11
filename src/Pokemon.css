@@ -80,7 +80,8 @@
     border-top-left-radius: 64px;
 }
 .pokemon-img-info {
-    height: 90%;
+    height: 80%;
+    width: -10%;
     z-index: 1;
 }
 .pokemon-text-info {
@@ -201,6 +202,8 @@
     }
 }
 .pokemon-id {
+    display: flex;
+    justify-content: space-between;
     margin-top: 20px;
     width: 80%;
     border-radius: 64px;

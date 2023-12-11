@@ -4,9 +4,11 @@ import WaveImg2 from '../wave-2.svg'
 import WaveImg3 from '../wave-3.svg'
 import WaveImg4 from '../wave-4.svg'
 import WaveImg5 from '../wave-5.svg'
+import BackIcon from '../BackIcon.png'
 import '../Animation.css'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getPokemonInfo } from '../utils/pokemon-utils'
+import Loader from './Loader'
 type PokemonInfo = {
     id: number;
     name: string;
@@ -38,7 +40,9 @@ export default function PokemonInfo() {
     }, [id]);
 
     if (!pokemonInfo) {
-        return <div>Loading...</div>;
+        return (
+            <Loader />
+        )
     }
     
     
@@ -46,8 +50,12 @@ export default function PokemonInfo() {
         <div className='pokemon-info-bg'>
             <div className={`${pokemonInfo.type}-pokemon-type pokemon-info-type`}>
                 <div className='pokemon-id'>
+                    <Link className='home-link' to={'/home'}>
+                        <img className='home-icon' src={BackIcon} alt="HomeIcon"/>
+                    </Link>
                     #{id?.toString().padStart(2, '0')}
                 </div>
+                
                 <img className="pokemon-img-info" src={pokemonInfo.img} alt={`Pokemon ${pokemonInfo.name}`} />
                 <span className='pokemon-text-info'>{pokemonInfo.name}</span>
             </div>

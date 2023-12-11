@@ -32,7 +32,9 @@
   margin: 0;
   padding: 0;
 }
-
+Link {
+  text-decoration: none;
+}
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -43,12 +45,19 @@
   height: 11.11vh;
 }
 
-a {
+a,
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
   display: block;
   width: 26.04%;
   max-height: 100%;
   align-items: center;
   margin-right: 8px;
+  text-decoration: none;
+  color: black;
 }
 
 #logo {
@@ -130,4 +139,12 @@ main {
   padding: 80px 280px 40px 240px;
   align-items: flex-start;
   gap: 40px;
+}
+
+.home-icon {
+    width: 100%;
+}
+a.home-link {
+  width: 2rem;
+  height: 2rem;
 }
