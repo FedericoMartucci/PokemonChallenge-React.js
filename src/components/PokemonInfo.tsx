@@ -7,7 +7,7 @@ import WaveImg5 from '../wave-5.svg'
 import BackIcon from '../BackIcon.png'
 import '../Animation.css'
 import { Link, useParams } from 'react-router-dom'
-import { getPokemonInfo } from '../utils/pokemon-utils'
+import { getPokemonById, getPokemons } from '../utils/pokemon-utils'
 import Loader from './Loader'
 type PokemonInfo = {
     id: number;
@@ -30,7 +30,7 @@ export default function PokemonInfo() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await getPokemonInfo(Number(id));
+                const response = await getPokemonById(Number(id));
                 setPokemonInfo(response);
             } catch (error) {
                 console.error('Error fetching data:', error);

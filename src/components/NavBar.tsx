@@ -1,12 +1,16 @@
 import Filter from "./Filter";
 import Logo from "./Logo"
 import ToogleBar from "./ToogleBar";
-function NavBar () {
+
+function NavBar (props: any) {
+    const handleSearch = (value: string) => {
+        props.handleValueSearched(value);
+    }
     return (
         <nav>
             <div className="nav-bar">
                 <Filter></Filter>
-                <ToogleBar></ToogleBar>
+                <ToogleBar handleSearch={handleSearch}></ToogleBar>
                 <Logo></Logo>
             </div>
         </nav>

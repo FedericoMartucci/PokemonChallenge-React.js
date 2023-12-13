@@ -65,63 +65,6 @@ a:active {
   max-height: 100%;
 }
 
-.filter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  color: var(--font-color-main);
-  width: 7;
-  height: 66.6%;
-  max-height: 100%;
-}
-.filter-text {
-  font-size: 100%;
-  max-width: 100%;
-  max-height: 100%;
-}
-.filter-icon {
-  width: 100%;
-  max-width: 100%;
-}
-.toogle-bar {
-  display: flex;
-  align-items: center;
-  background-color: var(--background-color-secondary);
-  border-radius: 24px;
-  outline: 0.1vw black solid;
-  width: 45.41vw;
-  height: 5vh;
-  max-height: 100%;
-  margin: 40px 0px;
-}
-
-#lupe-icon {
-  max-width: 100%;
-  width: 2rem;
-  opacity: 0.5;
-  padding: 8px 4px 8px 16px;
-}
-
-.search-input,
-.search-input:focus,
-.search-input:active {
-  background-color: var(--background-color-2);
-  width: 60%;
-  max-width: 100%;
-  max-height: 100%;
-  font-family: Montserrat;
-  font-size: 100%;
-  color: rgba(0, 0, 0, 0.3);
-  outline: none;
-  border: none;
-}
-
-.search-input:focus {
-  color: black;
-}
-
 body {
   display: flex;
   background-image: url(background-image.png);

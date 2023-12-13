@@ -1,9 +1,11 @@
 import Pokemon from "./Pokemon";
-
-function Main () {
+interface MainProps {
+    value: string;
+  }
+function Main ({value}: MainProps) {
     return (
         <main>
-            <Pokemon></Pokemon>
+            <Pokemon value={value}></Pokemon>
         </main>
     );
 }
