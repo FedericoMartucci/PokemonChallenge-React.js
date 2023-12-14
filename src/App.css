@@ -36,6 +36,7 @@ Link {
   text-decoration: none;
 }
 .nav-bar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +44,9 @@ Link {
   background-color: var(--background-color-main);
   width: 100vw;
   height: 11.11vh;
+  z-index: 9999;
 }
+
 
 a,
 a:link,

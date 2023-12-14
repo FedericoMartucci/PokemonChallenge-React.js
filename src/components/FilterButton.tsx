@@ -3,10 +3,11 @@ import {ReactComponent as Cross} from '../Cross.svg';
 import '../Filter.css'
 import { useState } from 'react';
 
-function Filter () {
+function FilterButton (props: any) {
     const [isFiltering, setIsFiltering] = useState<boolean>(false);
     const handleClick = () => {
         setIsFiltering(!isFiltering);
+        props.handleFilter(isFiltering);
     }
     return isFiltering? (
         <button onClick={handleClick} className='filter'>
@@ -19,4 +20,4 @@ function Filter () {
     );
 }
 
-export default Filter;
+export default FilterButton;

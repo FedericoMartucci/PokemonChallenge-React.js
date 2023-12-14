@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import Lupe from "../LupeIcon.png"
 import '../ToogleBar.css'
 function ToogleBar (props: any) {
     const [value, setValue] = useState<string>('')
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         props.handleSearch(value);
         setValue('');

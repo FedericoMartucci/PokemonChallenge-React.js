@@ -1,30 +1,78 @@
 import { gql } from "@apollo/client"
 import client from "./apollo-client"
 import axios from "axios";
+import { Filter } from "../components/Home";
 
-export async function getPokemons(offset: number, searchedValue: string){
+export async function getTypes(){
   const { data } = await client.query({
     query: gql`
-      query getPokemons($offset: Int!, $searchedValue: String!) {
-        pokemon_v2_pokemon(limit: 10, offset: $offset, where: {name: {_iregex: $searchedValue}}) {
-          id
+      query {
+        pokemon_v2_type {
           name
-          pokemon_v2_pokemonsprites {
-            sprites
-          }
-          pokemon_v2_pokemontypes {
-            pokemon_v2_type {
-              name
-            }
-          }
+        }
+      }`
+  })
+
+  const types = data.pokemon_v2_type.map((type: {name: string}) => type.name);
+
+  return types;
+}
+
+export async function getColors(){
+  const { data } = await client.query({
+    query: gql`
+      query {
+        pokemon_v2_pokemoncolor {
+          name
+        }
+      }`
+  })
+
+  const colors = data.pokemon_v2_pokemoncolor.map((color: {name: string}) => color.name);
+
+  return colors;
+}
+
+export async function getPokemons(offset: number, searchedValue: string, filters: Filter){
+  const { data } = await client.query({
+    query: gql`
+    query getPokemons($offset: Int!, 
+                      $searchedValue: String!,
+                      $isBaby: Boolean!,
+                      $minWeight: Int!,
+                      $maxWeight: Int!,
+                      $color: String!,
+                      $types: [String!]) {
+    pokemon_v2_pokemon(limit: 10, offset: $offset, 
+                      where: {name: {_iregex: $searchedValue}, 
+                      pokemon_v2_pokemonspecy: {is_baby: {_eq: $isBaby},
+                      pokemon_v2_pokemoncolor: {name: {_iregex: $color}}},
+                      weight: {_gte: $minWeight, _lte: $maxWeight},
+                      pokemon_v2_pokemontypes: {pokemon_v2_type: {name: {_${!filters.types.length? ('n') : ('')}in: $types}}}}) {
+      id
+      name
+      pokemon_v2_pokemonsprites {
+        sprites
+      }
+      pokemon_v2_pokemontypes {
+        pokemon_v2_type {
+          name
         }
       }
+    }
+    }
       `,
       variables: {
         offset: offset,
-        searchedValue: searchedValue
+        searchedValue: searchedValue,
+        isBaby: filters.isBaby,
+        minWeight: filters.weight[0],
+        maxWeight: filters.weight[1],
+        color: filters.color,
+        types: filters.types
       }
   })
+
   const pokemons = data.pokemon_v2_pokemon.map((pokemon: any) => {
     const id = pokemon.id;
     const name = pokemon.name;
