@@ -56,13 +56,13 @@ export default function FilterBar({ handleFilters, colors, pokemonTypes }: Filte
             </Box>
         </div>
         <div className="filter-item">
-            <p>Types</p>
+            <span>Types</span>
             <select onChange={(e) => {setTypes(Array.from(e.target.options).filter(o => o.selected).map(o => o.value))}} multiple name="types">
                 <option value="">All</option>
                 {pokemonTypes.map((type: string) => (<option key={type}>{type}</option>))}
             </select>
         </div>
-        <button className="filter" type="submit">Apply</button>
+        <button className="filter apply-filters" type="submit">Apply</button>
     </form>
   )
 }

@@ -33,9 +33,15 @@
   padding: 0;
   font: 1rem Montserrat
 }
+
+body {
+  overflow: hidden;
+}
+
 Link {
   text-decoration: none;
 }
+
 .nav-bar {
   position: relative;
   display: flex;
@@ -78,19 +84,4 @@ main {
   display: flex;
   width: 100vw;
   height: 88.89vh;
-}
-
-.row {
-  display: inline-flex;
-  padding: 80px 280px 40px 240px;
-  align-items: flex-start;
-  gap: 40px;
-}
-
-.home-icon {
-    width: 100%;
-}
-a.home-link {
-  width: 2rem;
-  height: 2rem;
 }

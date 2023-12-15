@@ -38,7 +38,9 @@ export default function PokemonInfo() {
                     <Link className='home-link' to={'/home'}>
                         <img className='home-icon' src={BackIcon} alt="HomeIcon"/>
                     </Link>
-                    #{id?.toString().padStart(2, '0')}
+                    <span>
+                        #{id?.toString().padStart(2, '0')}
+                    </span>
                 </div>
                 
                 <img className="pokemon-img-info" src={pokemonInfo.img} alt={`Pokemon ${pokemonInfo.name}`} />
