@@ -112,9 +112,9 @@ export async function getPokemonById(id: number){
               name
               pokemon_v2_pokemonspecy {
                 pokemon_v2_evolutionchain {
-                  pokemon_v2_pokemonspecies {
-                    name
+                  pokemon_v2_pokemonspecies (order_by: {order: asc}){
                     id
+                    name
                   }
                 }
               }
@@ -140,6 +140,7 @@ export async function getPokemonById(id: number){
     })
     const pokemonInfo = {  
         id: data.pokemon_v2_pokemon[0].id,
+        evolution: data.pokemon_v2_pokemon[0].pokemon_v2_pokemonspecy.pokemon_v2_evolutionchain.pokemon_v2_pokemonspecies,
         img,
         name: data.pokemon_v2_pokemon[0].name,
         stats: data.pokemon_v2_pokemon[0].pokemon_v2_pokemonstats,

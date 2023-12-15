@@ -6,7 +6,7 @@ import WaveImg4 from '../wave-4.svg'
 import WaveImg5 from '../wave-5.svg'
 import BackIcon from '../BackIcon.png'
 import '../Animation.css'
-import { Link, useParams } from 'react-router-dom'
+import { Link, NavLink, useParams } from 'react-router-dom'
 import { getPokemonById, getPokemons } from '../utils/pokemon-utils'
 import Loader from './Loader'
 type PokemonInfo = {
@@ -48,6 +48,11 @@ export default function PokemonInfo() {
     
       return (
         <div className='pokemon-info-bg'>
+            <div className='evolution-chain'>
+                {pokemonInfo.evolution.map((evolution: {id: string, name: string}) => (
+                    <NavLink className={({isActive}) => isActive? `active-evolution ${pokemonInfo.type}-pokemon-type` : 'evolution'} to={`/pokemon/${evolution.id}`}>{evolution.name}</NavLink>
+                ))}
+            </div>
             <div className={`${pokemonInfo.type}-pokemon-type pokemon-info-type`}>
                 <div className='pokemon-id'>
                     <Link className='home-link' to={'/home'}>
@@ -60,11 +65,11 @@ export default function PokemonInfo() {
                 <span className='pokemon-text-info'>{pokemonInfo.name}</span>
             </div>
             <div className='pokemon-info'>
-                <img className='wave-img' src={WaveImg1} />
-                <img className='wave-img' src={WaveImg2} />
-                <img className='wave-img' src={WaveImg3} />
-                <img className='wave-img' src={WaveImg4} />
-                <img className='wave-img' src={WaveImg5} id='shape' />
+                <img className='wave-img' src={WaveImg1} alt='WaveImg1'/>
+                <img className='wave-img' src={WaveImg2} alt='WaveImg2'/>
+                <img className='wave-img' src={WaveImg3} alt='WaveImg3'/>
+                <img className='wave-img' src={WaveImg4} alt='WaveImg4'/>
+                <img className='wave-img' src={WaveImg5} alt='WaveImg5' id='shape' />
                 <div className='pokemon-weight-height'>
                     <div className='pokemon-weight'>
                         <span>{pokemonInfo.weight/10} kg.</span>

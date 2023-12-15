@@ -9,7 +9,7 @@ export default function PokemonCard(props: any) {
   
   return (
     <div>
-      <Link to={{pathname: `/pokemon/${id}`}}>
+      <Link className='pokemon-card-link' to={{pathname: `/pokemon/${id}`}}>
         <div className={`${types[0]}-type pokemon`}>
             <img className='pokemon-img' src={img} alt={`Pokemon ${name}`} />
             <span className="pokemon-name">{name}</span>

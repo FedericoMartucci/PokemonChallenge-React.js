@@ -123,6 +123,7 @@
     animation: move-2 4s infinite;
 }
 
+
 @keyframes move-2 {
     50% {
         transform: translateY(35px);
@@ -227,6 +228,47 @@ ul {
     list-style: none;
     width: 65%;
 }
+.evolution-chain {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.evolution:active, .active-evolution:active {
+    box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.4);
+}
+
+.evolution, .active-evolution,
+.evolution:active, .active-evolution:active,
+.evolution:link, .active-evolution:link,
+.evolution:visited, .active-evolution:visited,
+.evolution:focus, .active-evolution:focus,
+.evolution:hover, .active-evolution:hover{
+    color: black;
+    text-decoration: none;
+    width: 30%;
+    outline: black solid 1px;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 64px;
+    font: 1rem Montserrat;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.evolution,
+.evolution:active,
+.evolution:link,
+.evolution:visited,
+.evolution:focus,
+.evolution:hover {
+    background-color: var(--background-color-secondary);
+}
+
 .normal-pokemon-type, .normal-type:hover {
     background-color: var(--normal-color-type);    
 }
@@ -287,4 +329,3 @@ ul {
 .shadow-pokemon-type, .shadow-type:hover {
     background-color: var(--shadow-color-type);    
 }
-
