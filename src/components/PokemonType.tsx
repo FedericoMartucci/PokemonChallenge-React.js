@@ -1,7 +1,6 @@
-import React from 'react'
+import { PokemonTypeProps } from '../utils/types'
 
-export default function PokemonType(props: any) {
-    const { type } = props;
+export default function PokemonType({ type }: PokemonTypeProps) {
     
   return (
     <span className={`pokemon-type ${type}-pokemon-type`}>

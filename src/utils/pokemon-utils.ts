@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client"
 import client from "./apollo-client"
 import axios from "axios";
-import { Filter } from "../components/Home";
+import { Filter } from "../utils/types";
 
 export async function getTypes(){
   const { data } = await client.query({

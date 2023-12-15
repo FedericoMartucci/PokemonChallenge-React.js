@@ -1,5 +1,4 @@
-import '../Loader.css'
-function Loader () {
+export default function Loader () {
     return (
         <div className='loader-container'>
             <div className="loader">
@@ -10,5 +9,3 @@ function Loader () {
         </div>
     )
 }
-
-export default Loader;

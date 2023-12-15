@@ -1,27 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import WaveImg1 from '../wave-1.svg'
-import WaveImg2 from '../wave-2.svg'
-import WaveImg3 from '../wave-3.svg'
-import WaveImg4 from '../wave-4.svg'
-import WaveImg5 from '../wave-5.svg'
-import BackIcon from '../BackIcon.png'
-import '../Animation.css'
+import WaveImg1 from '../images/wave-1.svg'
+import WaveImg2 from '../images/wave-2.svg'
+import WaveImg3 from '../images/wave-3.svg'
+import WaveImg4 from '../images/wave-4.svg'
+import WaveImg5 from '../images/wave-5.svg'
+import BackIcon from '../images/BackIcon.png'
 import { Link, NavLink, useParams } from 'react-router-dom'
-import { getPokemonById, getPokemons } from '../utils/pokemon-utils'
+import { getPokemonById } from '../utils/pokemon-utils'
 import Loader from './Loader'
-type PokemonInfo = {
-    id: number;
-    name: string;
-    stats: any[];
-    type: string;
-    height: number;
-    base_experience: number;
-    weight: number;
-  }
-type Stat = {
-    stat: {name: string};
-    base_stat: number;
-}
+
 
 export default function PokemonInfo() {
     const { id } = useParams()
@@ -38,19 +25,12 @@ export default function PokemonInfo() {
         };
         fetchData();
     }, [id]);
-
-    if (!pokemonInfo) {
-        return (
-            <Loader />
-        )
-    }
     
-    
-      return (
+      return !pokemonInfo? (<Loader />) : (
         <div className='pokemon-info-bg'>
             <div className='evolution-chain'>
                 {pokemonInfo.evolution.map((evolution: {id: string, name: string}) => (
-                    <NavLink className={({isActive}) => isActive? `active-evolution ${pokemonInfo.type}-pokemon-type` : 'evolution'} to={`/pokemon/${evolution.id}`}>{evolution.name}</NavLink>
+                    <NavLink key={evolution.id} className={({isActive}) => isActive? `active-evolution ${pokemonInfo.type}-pokemon-type` : 'evolution'} to={`/pokemon/${evolution.id}`}>{evolution.name}</NavLink>
                 ))}
             </div>
             <div className={`${pokemonInfo.type}-pokemon-type pokemon-info-type`}>

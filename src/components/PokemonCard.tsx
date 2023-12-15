@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
 import PokemonType from './PokemonType';
-import PokemonInfo from './PokemonInfo';
-import { createPortal } from 'react-dom';
+
+import { PokemonCardProps } from '../utils/types';
+
 import { Link } from 'react-router-dom';
 
-export default function PokemonCard(props: any) {
-   const { id, types, name, img } = props;
+export default function PokemonCard({ id, types, name, img }: PokemonCardProps) {
   
   return (
     <div>

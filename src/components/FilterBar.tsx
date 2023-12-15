@@ -1,32 +1,29 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { FormEvent, useState } from 'react';
-
-const MIN_VALUE: number = 0;
-const MAX_VALUE: number = 1000;
+import { FilterBarProps, MAX_VALUE, MIN_VALUE } from '../utils/types';
 
 function valuetext(value: number) {
     return `${value}kg`;
   }
 
-export default function FilterBar(props: any) {
-    const [weight, setWeight] = useState<number[]>([0, 1000]);
+export default function FilterBar({ handleFilters, colors, pokemonTypes }: FilterBarProps) {
+    const [weight, setWeight] = useState<number[]>([MIN_VALUE, MAX_VALUE]);
     const [isBaby, setIsBaby] = useState<boolean>(false);
     const [color, setColor] = useState<string>('');
     const [types, setTypes] = useState<string[]>([]);
-    const { colors, pokemonTypes } = props;
 
-    const handleChange = (event: Event, newValue: number | number[]) => {
+    const handleChange = (event: Event, newValue: number | number[]): void => {
         setWeight(newValue as number[]);
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        props.handleFilters(isBaby, color, weight, types);
+        handleFilters({ isBaby, color, weight, types });
     }
 
   return (
-    <form className="filter-items" onSubmit={handleSubmit}>
+    <form className="filter-items" onSubmit={ handleSubmit }>
         <div className="filter-item">
             <span>Baby <input type="checkbox" name="isBaby" onChange={(e) => setIsBaby(e.target.checked)} /></span>
         </div>
@@ -49,9 +46,9 @@ export default function FilterBar(props: any) {
                     max={MAX_VALUE}
                     getAriaLabel={() => 'Weight range'}
                     value={weight}
-                    onChange={handleChange}
+                    onChange={ handleChange }
                     valueLabelDisplay="auto"
-                    getAriaValueText={valuetext}
+                    getAriaValueText={ valuetext }
                     size="small"
                     disableSwap
                     color="error"
