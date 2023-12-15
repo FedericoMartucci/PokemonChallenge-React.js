@@ -27,7 +27,7 @@
 .pokemon-text-info {
     z-index: 1;
     text-transform: capitalize;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .pokemon-info {
@@ -75,8 +75,8 @@
 }
 
 a.home-link {
-  width: 2.5rem;
-  height: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .pokemon-stat {
@@ -87,11 +87,17 @@ a.home-link {
     margin-top: 4px;
 }
 
-ul {
+.pokemon-info ul {
     width: 65%;
 }
 
-@media (min-width: 568px) and (max-width: 768px) {
+.pokemon-info ul li {
+    display: flex;
+    align-items: center;
+}
+
+
+@media (min-width: 576px) and (max-width: 768px) {
     .pokemon-info-type {
         width: 80vw;
         height: 30vh;
@@ -99,28 +105,22 @@ ul {
 
     .pokemon-info {
         width: 80vw;
-        height: 45vh;
-    }
-
-    #shape {
-        width: 80vw;
-        top: 35%;
-    }
-
-    .wave-img:not(#shape) {
-        width: 80vw;
-        top: 33%;
+        height: 30vh;
     }
 }
 
-@media (max-width: 568px) {
-    #shape {
-        width: 60vw;
-        top: 46%;
+@media (max-width: 576px) {
+    .pokemon-info-type {
+        width: 80vw;
+        height: 30vh;
     }
 
-    .wave-img:not(#shape) {
-        width: 60vw;
-        top: 46%;
+    .pokemon-info {
+        width: 80vw;
+        height: 30vh;
+    }
+
+    .pokemon-info ul li span {
+        font-size: 0.75rem;
     }
 }

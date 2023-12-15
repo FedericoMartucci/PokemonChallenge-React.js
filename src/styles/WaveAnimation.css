@@ -1,17 +1,14 @@
 #shape {
-    position: absolute;
-    width: 60vw;
-    top: 40%;
+    margin-top: -13%;
 }
 
-.wave-img:not(#shape) {
-    width: 60vw;
-    position: absolute;
-    top: 40%;
+.wave-img {
+    width: 100%;
 }
 
-.pokemon-info .wave-img:nth-child(1) {
+.pokemon-info-type .wave-img:nth-child(4) {
     opacity: 0.4;
+    margin-top: -15%;
     animation: move-1 5s infinite;
 }
 
@@ -22,9 +19,9 @@
 
 }
 
-.pokemon-info .wave-img:nth-child(2) {
+.pokemon-info-type .wave-img:nth-child(5) {
     opacity: 0.3;
-    margin-top: 0;
+    margin-top: -12%;
     animation: move-2 4s infinite;
 }
 
@@ -36,9 +33,9 @@
 
 }
 
-.pokemon-info .wave-img:nth-child(3) {
+.pokemon-info-type .wave-img:nth-child(6) {
     opacity: 0.2;
-    margin-top: 0;
+    margin-top: -12%;
     animation: move-3 3.5s infinite;
 }
 
@@ -49,9 +46,9 @@
 
 }
 
-.pokemon-info .wave-img:nth-child(4) {
+.pokemon-info-type .wave-img:nth-child(7) {
     opacity: 0.3;
-    margin-top: 0;
+    margin-top: -12%;
     animation: move-4 3s infinite;
 }
 
@@ -60,4 +57,36 @@
         transform: translateY(20px);
     }
 
+}
+
+@media (min-width: 992px) and (max-width: 1440px) {
+    .pokemon-info-type .wave-img:nth-child(4) {
+        margin-top: -17%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #shape {
+        margin-top: -14%;
+    }
+
+    .pokemon-info-type .wave-img:nth-child(4) {
+        margin-top: -18%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    #shape {
+        margin-top: -15%;
+    }
+
+    .pokemon-info-type .wave-img:nth-child(4) {
+        margin-top: -20%;
+    }
+}
+
+@media (max-width: 576px) {
+    .pokemon-info-type .wave-img:nth-child(4) {
+        margin-top: -25%;
+    }
 }

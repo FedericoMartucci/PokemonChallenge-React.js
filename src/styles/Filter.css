@@ -91,13 +91,16 @@ select {
     .filter {
         width: 7%;
     }
+
     .filter-items {
         height: 30vh;
         flex-wrap: wrap;
     }
+
     .filter-item {
         width: 40%;
     }
+
     .apply-filters {
         height: 20%;
         width: 40%;
@@ -119,7 +122,8 @@ select {
         width: 100%;
     }
 
-    .filter-item, .filter-item span {
+    .filter-item,
+    .filter-item span {
         font-size: 1.25rem;
     }
 

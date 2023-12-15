@@ -45,7 +45,7 @@ export async function getPokemons(offset: number, searchedValue: string, filters
                       $types: [String!]) {
     pokemon_v2_pokemon(limit: 10, offset: $offset, 
                       where: {name: {_iregex: $searchedValue}, 
-                      pokemon_v2_pokemonspecy: {is_baby: {_eq: $isBaby},
+                      pokemon_v2_pokemonspecy: {is_baby: {_eq: $isBaby,},
                       pokemon_v2_pokemoncolor: {name: {_iregex: $color}}},
                       weight: {_gte: $minWeight, _lte: $maxWeight},
                       pokemon_v2_pokemontypes: {pokemon_v2_type: {name: {_${!filters.types.length? ('n') : ('')}in: $types}}}}) {

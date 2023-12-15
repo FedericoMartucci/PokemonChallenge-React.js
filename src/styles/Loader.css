@@ -5,14 +5,15 @@
     align-items: center;
     justify-content: center;
 }
+
 .loader {
     display: flex;
     align-items: center;
     flex-direction: column;
     z-index: 2;
     animation: loader-rotation 2s infinite;
-  }
-  
+}
+
 .semicircle-up,
 .semicircle-down {
     width: 160px;
@@ -27,7 +28,7 @@
     background-color: white;
     margin-top: -20px;
 }
-  
+
 .center {
     width: 40px;
     height: 40px;
@@ -41,21 +42,22 @@
 @keyframes loader-rotation {
     0% {
         transform: rotateZ(0deg);
-      }
+    }
+
     93% {
         transform: rotateZ(355deg);
-      }
+    }
+
     96% {
         transform: rotateZ(357deg);
     }
+
     99% {
         transform: rotateZ(359deg);
     }
+
     100% {
         transform: rotateZ(360deg);
-      }
-    
+    }
+
 }
-
-
-  

@@ -45,13 +45,13 @@ export default function PokemonInfo() {
                 
                 <img className="pokemon-img-info" src={pokemonInfo.img} alt={`Pokemon ${pokemonInfo.name}`} />
                 <span className='pokemon-text-info'>{pokemonInfo.name}</span>
-            </div>
-            <div className='pokemon-info'>
                 <img className='wave-img' src={WaveImg1} alt='WaveImg1'/>
                 <img className='wave-img' src={WaveImg2} alt='WaveImg2'/>
                 <img className='wave-img' src={WaveImg3} alt='WaveImg3'/>
                 <img className='wave-img' src={WaveImg4} alt='WaveImg4'/>
-                <img className='wave-img' src={WaveImg5} alt='WaveImg5' id='shape' />
+                <img className='wave-img' src={WaveImg5} alt='WaveImg5' id='shape'/>
+            </div>
+            <div className='pokemon-info'>
                 <div className='pokemon-weight-height'>
                     <div className='pokemon-weight'>
                         <span>{pokemonInfo.weight/10} kg.</span>
