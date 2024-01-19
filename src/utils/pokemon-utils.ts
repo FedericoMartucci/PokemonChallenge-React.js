@@ -69,20 +69,18 @@ export async function getPokemons(offset: number, searchedValue: string, filters
         minWeight: filters.weight[0],
         maxWeight: filters.weight[1],
         color: filters.color,
-        types: filters.types
+        types: filters.types,
       }
   })
 
   const pokemons = data.pokemon_v2_pokemon.map((pokemon: any) => {
-    const id = pokemon.id;
-    const name = pokemon.name;
-    const types = pokemon.pokemon_v2_pokemontypes.map((type: any) => {
+    const id: number = pokemon.id;
+    const name: string = pokemon.name;
+    const types: string = pokemon.pokemon_v2_pokemontypes.map((type: any) => {
       return type.pokemon_v2_type.name;
     })
-    let img;
-    JSON.parse(pokemon.pokemon_v2_pokemonsprites[0].sprites).other.dream_world.front_default?
-      (img = JSON.parse(pokemon.pokemon_v2_pokemonsprites[0].sprites).other.dream_world.front_default) :
-      (img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`)
+    const img: string = pokemon.pokemon_v2_pokemonsprites[0].sprites.other.dream_world.front_default ?? 
+      `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
     return {id, name, types, img};
   })
