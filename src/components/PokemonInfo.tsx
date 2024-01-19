@@ -26,7 +26,7 @@ export default function PokemonInfo() {
         fetchData();
     }, [id]);
     
-      return !pokemonInfo? (<Loader />) : (
+    return !pokemonInfo? (<Loader />) : (
         <div className='pokemon-info-bg'>
             <div className='evolution-chain'>
                 {pokemonInfo.evolution.map((evolution: {id: string, name: string}) => (
