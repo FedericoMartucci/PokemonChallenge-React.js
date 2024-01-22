@@ -1,5 +1,5 @@
 import PokemonCard from "./PokemonCard";
-import Loader from "./Loader";
+import Loader from "./loader/Loader";
 
 import { PokemonProps } from "../utils/types";
 

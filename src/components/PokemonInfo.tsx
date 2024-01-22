@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import WaveImg1 from '../images/wave-1.svg'
-import WaveImg2 from '../images/wave-2.svg'
-import WaveImg3 from '../images/wave-3.svg'
-import WaveImg4 from '../images/wave-4.svg'
-import WaveImg5 from '../images/wave-5.svg'
-import BackIcon from '../images/BackIcon.png'
+import WaveImg1 from '../assets/wave-1.svg'
+import WaveImg2 from '../assets/wave-2.svg'
+import WaveImg3 from '../assets/wave-3.svg'
+import WaveImg4 from '../assets/wave-4.svg'
+import WaveImg5 from '../assets/wave-5.svg'
+import BackIcon from '../assets/BackIcon.png'
 import { Link, NavLink, useParams } from 'react-router-dom'
 import { getPokemonById } from '../utils/pokemon-utils'
-import Loader from './Loader'
+import Loader from './loader/Loader'
 
 
 export default function PokemonInfo() {

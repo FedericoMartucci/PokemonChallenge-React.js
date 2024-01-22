@@ -76,7 +76,7 @@ Link {
 
 body {
   display: flex;
-  background-image: url(../images/BackgroundImage.png);
+  background-image: url(../assets/BackgroundImage.png);
   background-size: 240px 240px;
 }
 

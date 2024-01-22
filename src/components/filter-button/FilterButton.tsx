@@ -1,7 +1,7 @@
-import { ReactComponent as FilterSvg } from '../images/FilterBar.svg';
-import { ReactComponent as CrossSvg } from '../images/Cross.svg';
+import { ReactComponent as FilterSvg } from '../../assets/FilterBar.svg';
+import { ReactComponent as CrossSvg } from '../../assets/Cross.svg';
 
-import { FilterButtonProps } from '../utils/types';
+import { FilterButtonProps } from '../../utils/types';
 
 import { useState } from 'react';
 

@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import Lupe from "../images/LupeIcon.png"
+import Lupe from "../assets/LupeIcon.png"
 
 import { SearchBarProps } from "../utils/types";
 

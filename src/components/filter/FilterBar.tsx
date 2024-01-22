@@ -1,11 +1,11 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { FormEvent, useState } from 'react';
-import { FilterBarProps, MAX_VALUE, MIN_VALUE } from '../utils/types';
+import { FilterBarProps, MAX_VALUE, MIN_VALUE } from '../../utils/types';
 
 function valuetext(value: number) {
     return `${value}kg`;
-  }
+}
 
 export default function FilterBar({ handleFilters, colors, pokemonTypes }: FilterBarProps) {
     const [weight, setWeight] = useState<number[]>([MIN_VALUE, MAX_VALUE]);

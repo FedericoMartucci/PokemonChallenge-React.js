@@ -1,7 +1,7 @@
-import FilterButton from "./FilterButton";
+import FilterButton from "./filter-button/FilterButton";
 import Logo from "./Logo"
 import SearchBar from "./SearchBar";
-import FilterBar from "./FilterBar";
+import FilterBar from "./filter/FilterBar";
 
 import { NavBarProps } from "../utils/types";
 
