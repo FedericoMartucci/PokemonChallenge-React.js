@@ -25,11 +25,16 @@ export const LightTheme: Partial<Theme> = {
     unknown: "#D2C21A",
     shadow: "#5F5F5F",
   },
+  hover: {
+    dark: "#EE0000",
+    gray: "#CCCCCC",
+  },
   text: {
     main: "#000000",
     secondary: "#FFFFFF",
   },
   size: {
+    extrasmall: "12px",
     small: "16px",
     medium: "24px",
     large: "32px",
@@ -65,19 +70,15 @@ export type Theme = {
     shadow: string;
   };
   hover: {
-    default: string;
-    follow: string;
-    error: string;
-    outlined: string;
-    disabled: string;
+    dark: string;
     gray: string;
-    purple: string;
   };
   text: {
     main: string;
     secondary: string;
   };
   size: {
+    extrasmall: string;
     small: string;
     medium: string;
     large: string;

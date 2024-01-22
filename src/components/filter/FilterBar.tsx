@@ -1,12 +1,19 @@
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { useState } from "react";
-import { FilterBarProps, MAX_VALUE, MIN_VALUE } from "../../utils/types";
+import {
+  ButtonType,
+  FilterBarProps,
+  MAX_VALUE,
+  MIN_VALUE,
+  Sizes,
+} from "../../utils/types";
 import { StyledFilterItem } from "./StyledFilterItem";
 import { StyledFilterContainer } from "./StyledFilterContainer";
 import { StyledP } from "../common/text/P";
 import { StyledContainer } from "../common/Container";
-import { StyledButton } from "../button/StyledButton";
+import { StyledButton } from "../common/Button";
+import { StyledSelect } from "../common/text/Select";
 
 function valuetext(value: number) {
   return `${value}kg`;
@@ -29,7 +36,7 @@ export default function FilterBar({
   return (
     <StyledFilterContainer>
       <StyledFilterItem>
-        <StyledP primary={false} size={"SMALL"}>
+        <StyledP primary={false} size={Sizes.SMALL}>
           Baby
           <input
             type="checkbox"
@@ -39,29 +46,38 @@ export default function FilterBar({
         </StyledP>
       </StyledFilterItem>
       <StyledFilterItem>
-        <StyledP primary={false} size={"SMALL"}>
+        <StyledP primary={false} size={Sizes.SMALL}>
           Colors
         </StyledP>
-        <select
+        <StyledSelect
           onChange={(e) => {
             setColor(e.target.value);
           }}
           name="colors"
+          primary={true}
+          size={Sizes.EXTRASMALL}
         >
           <option value="">All</option>
           {colors.map((color: string) => (
             <option key={color}>{color}</option>
           ))}
-        </select>
+        </StyledSelect>
       </StyledFilterItem>
       <StyledFilterItem>
         <Box className="box-item" sx={{ width: 200 }}>
-          <StyledContainer>
-            <StyledP primary={false} size={"SMALL"}>
+          <StyledContainer
+          width="100%"
+          display="flex"
+          justifyContent="space-between"
+          alignItems="flex-end"
+          >
+            <StyledP primary={false} size={Sizes.SMALL}>
               {MIN_VALUE}kg
             </StyledP>
-            <StyledP primary={false} size={"MEDIUM"}>Weight</StyledP>
-            <StyledP primary={false} size={"SMALL"}>
+            <StyledP primary={false} size={Sizes.MEDIUM}>
+              Weight
+            </StyledP>
+            <StyledP primary={false} size={Sizes.SMALL}>
               {MAX_VALUE}kg
             </StyledP>
           </StyledContainer>
@@ -80,8 +96,10 @@ export default function FilterBar({
         </Box>
       </StyledFilterItem>
       <StyledFilterItem>
-        <StyledP primary={false} size={"SMALL"}>Types</StyledP>
-        <select
+        <StyledP primary={false} size={Sizes.SMALL}>
+          Types
+        </StyledP>
+        <StyledSelect
           onChange={(e) => {
             setTypes(
               Array.from(e.target.options)
@@ -91,16 +109,19 @@ export default function FilterBar({
           }}
           multiple
           name="types"
+          primary={true}
+          size={Sizes.EXTRASMALL}
         >
           <option value="">All</option>
           {pokemonTypes.map((type: string) => (
             <option key={type}>{type}</option>
           ))}
-        </select>
+        </StyledSelect>
       </StyledFilterItem>
       <StyledButton
-        className="filter apply-filters"
         type="submit"
+        buttonType={ButtonType.APPLYFILTER}
+        size={Sizes.MEDIUM}
         onClick={() => handleFilters({ isBaby, color, weight, types })}
       >
         Apply

@@ -2,16 +2,16 @@ import styled from "styled-components";
 import { Theme } from "../../../utils/theme";
 import { Sizes } from "../../../utils/types";
 
-interface PProps {
+interface SelectProps {
   primary: boolean;
   size: Sizes;
   theme: Theme;
 }
 
-export const StyledP = styled.p<PProps>`
-  color: ${(props: PProps) =>
+export const StyledSelect = styled.select<SelectProps>`
+  color: ${(props: SelectProps) =>
     props.primary ? props.theme.text.main : props.theme.text.secondary};
-  font-size: ${(props: PProps) => {
+  font-size: ${(props: SelectProps) => {
     switch (props.size) {
       case Sizes.EXTRASMALL:
         return props.theme.size.extrasmall;
@@ -25,13 +25,6 @@ export const StyledP = styled.p<PProps>`
         return props.theme.size.extralarge;
     }
   }};
-  font-style: normal;
-  font-weight: 400;
-  line-height: 110%;
-  letter-spacing: -0.15px;
-
-  @media (max-width: 576px) {
-    font-size: 1.25rem;
-  }
-}
+  margin-left: 8px;
+  text-transform: capitalize;
 `;

@@ -85,3 +85,13 @@ main {
   width: 100vw;
   height: 88.89vh;
 }
+ /* Filter.css */
+.box-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.filter-icon {
+  width: 50%;
+}
