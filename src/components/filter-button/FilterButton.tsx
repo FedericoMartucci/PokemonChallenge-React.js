@@ -4,8 +4,9 @@ import { ReactComponent as CrossSvg } from '../../assets/Cross.svg';
 import { FilterButtonProps } from '../../utils/types';
 
 import { useState } from 'react';
+import { StyledButton } from '../button/StyledButton';
 
-export default function FilterButton ({ handleFilter }: FilterButtonProps) {
+export default function FilterButton({ handleFilter }: FilterButtonProps) {
     const [isFiltering, setIsFiltering] = useState<boolean>(false);
 
     const handleClick = (): void => {
@@ -13,13 +14,11 @@ export default function FilterButton ({ handleFilter }: FilterButtonProps) {
         handleFilter(isFiltering);
     }
 
-    return isFiltering? (
-        <button onClick={ handleClick } className='filter'>
-            <CrossSvg className='filter-icon' />
-        </button>
-    ) : (
-        <button onClick={ handleClick } className='filter'>
-            <FilterSvg className='filter-icon'/>
-        </button>
-    );
+    return (
+        <StyledButton
+        onClick={handleClick}
+        >
+            {isFiltering ? <CrossSvg className='filter-icon' /> : <FilterSvg className='filter-icon' />}
+        </StyledButton>
+    )
 }

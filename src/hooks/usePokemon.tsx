@@ -25,7 +25,7 @@ export default function usePokemon({ value, filters }: PokemonProps) {
                 const pokemons: any[] = await getPokemons(offset, value, filters);
                 offset? setPokemons(prevPokemons => [...prevPokemons, ...pokemons]) : setPokemons(pokemons);
             } catch (e) {
-                console.log("Error loading pokemons: ", e)
+                console.error("Error loading pokemons: ", e)
             }
             finally {
                 setIsLoading(false)

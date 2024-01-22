@@ -4,7 +4,6 @@ import "./styles/App.css";
 import "./styles/BackgroundTypes.css";
 import "./styles/Evolutions.css";
 import "./styles/Filter.css";
-import "./styles/Loader.css";
 import "./styles/Pokemon.css";
 import "./styles/PokemonInfo.css";
 import "./styles/ProgressBar.css";

@@ -26,8 +26,8 @@ export const LightTheme: Partial<Theme> = {
     shadow: "#5F5F5F",
   },
   text: {
-    main: "#FFFFFF",
-    secondary: "#000000",
+    main: "#000000",
+    secondary: "#FFFFFF",
   },
   size: {
     small: "16px",
