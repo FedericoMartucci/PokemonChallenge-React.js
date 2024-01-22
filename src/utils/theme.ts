@@ -1,7 +1,7 @@
 export const LightTheme: Partial<Theme> = {
   background: {
     main: "#FF0000",
-    secondary: "FFFFFF",
+    secondary: "#FFFFFF",
   },
   types: {
     normal: "#A8A090",

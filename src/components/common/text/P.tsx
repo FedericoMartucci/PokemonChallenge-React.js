@@ -3,9 +3,10 @@ import { Theme } from "../../../utils/theme";
 import { Sizes } from "../../../utils/types";
 
 interface PProps {
-  primary: boolean;
+  primary?: boolean;
   size: Sizes;
   theme: Theme;
+  margin?: string;
 }
 
 export const StyledP = styled.p<PProps>`
@@ -29,7 +30,10 @@ export const StyledP = styled.p<PProps>`
   font-weight: 400;
   line-height: 110%;
   letter-spacing: -0.15px;
+  text-transform: capitalize;
 
+  ${(props: PProps) => props.margin !== undefined && `margin: ${props.margin};`}
+  
   @media (max-width: 576px) {
     font-size: 1.25rem;
   }

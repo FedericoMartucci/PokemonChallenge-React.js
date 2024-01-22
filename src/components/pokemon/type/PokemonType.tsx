@@ -1,8 +1,8 @@
-import { ColorTypes } from "../utils/constants";
-import { LightTheme } from "../utils/theme";
-import { ColorType, PokemonTypeProps, Sizes } from "../utils/types";
-import { StyledContainer } from "./common/Container";
-import { StyledP } from "./common/text/P";
+import { ColorTypes } from "../../../utils/constants";
+import { LightTheme } from "../../../utils/theme";
+import { ColorType, PokemonTypeProps, Sizes } from "../../../utils/types";
+import { StyledContainer } from "../../common/Container";
+import { StyledP } from "../../common/text/P";
 
 export default function PokemonType({ type }: PokemonTypeProps) {
   const colorType: ColorType | undefined = ColorTypes.find(

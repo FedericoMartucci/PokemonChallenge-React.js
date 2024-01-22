@@ -1,6 +1,6 @@
 import { MainProps } from "../utils/types";
 
-import Pokemon from "./Pokemon";
+import Pokemon from "./pokemon/Pokemon";
 import { StyledMain } from "./common/Main";
 
 export default function Main ({ value, filters }: MainProps) {

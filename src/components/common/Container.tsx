@@ -6,10 +6,8 @@ type ContainerProps = {
 } & CSSProperties;
 
 const ContainerBase = styled.div`
-  height: 100%;
   transition: 0.3s ease-in-out;
   scrollbar-width: auto;
-  width: 100%;
 `;
 
 export const StyledContainer = styled(ContainerBase).attrs<ContainerProps>(

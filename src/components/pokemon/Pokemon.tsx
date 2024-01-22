@@ -1,9 +1,9 @@
-import PokemonCard from "./PokemonCard";
-import Loader from "./loader/Loader";
+import PokemonCard from "./card/PokemonCard";
+import Loader from "../loader/Loader";
 
-import { PokemonProps } from "../utils/types";
+import { PokemonProps } from "../../utils/types";
 
-import usePokemon from "../hooks/usePokemon";
+import usePokemon from "../../hooks/usePokemon";
 
 export default function Pokemon ({ value, filters }: PokemonProps) {
     const { isLoading, pokemons } = usePokemon({ value, filters });
