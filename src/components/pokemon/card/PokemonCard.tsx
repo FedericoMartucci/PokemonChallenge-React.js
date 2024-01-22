@@ -2,12 +2,13 @@ import PokemonType from "../type/PokemonType";
 
 import { ColorType, PokemonCardProps, Sizes } from "../../../utils/types";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { StyledContainer } from "../../common/Container";
 import { ColorTypes } from "../../../utils/constants";
 import { StyledP } from "../../common/text/P";
 import { StyledImage } from "../../common/Image";
 import { StyledPokemonCard } from "./StyledPokemonCard";
+import { StyledA } from "../../common/A";
 
 export default function PokemonCard({
   id,
@@ -15,15 +16,17 @@ export default function PokemonCard({
   name,
   img,
 }: PokemonCardProps) {
+  const navigate = useNavigate();
   const colorType: ColorType | undefined = ColorTypes.find(
     (item: ColorType) => item.type === types[0]
   );
   return (
     <StyledContainer>
-      <Link className="pokemon-card-link" to={{ pathname: `/pokemon/${id}` }}>
-        <StyledPokemonCard
-          backgroundColor={colorType?.color}
-        >
+      <StyledA
+        className="pokemon-card-link"
+        onClick={() => navigate(`/pokemon/${id}`)}
+      >
+        <StyledPokemonCard backgroundColor={colorType?.color}>
           <StyledImage
             width="70%"
             height="60%"
@@ -46,7 +49,7 @@ export default function PokemonCard({
             ))}
           </StyledContainer>
         </StyledPokemonCard>
-      </Link>
+      </StyledA>
     </StyledContainer>
   );
 }

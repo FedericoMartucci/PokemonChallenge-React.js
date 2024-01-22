@@ -1,7 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import "./styles/App.css";
-import "./styles/BackgroundTypes.css";
 import "./styles/Evolutions.css";
 import "./styles/Pokemon.css";
 import "./styles/PokemonInfo.css";
