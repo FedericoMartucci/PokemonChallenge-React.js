@@ -21,7 +21,6 @@ export const StyledContainer = styled(ContainerBase).attrs<ContainerProps>(
     ${(props) =>
       props.hoverable &&
       css`
-        background-color: ${props.theme.colors.hover};
         cursor: pointer;
       `}
   }

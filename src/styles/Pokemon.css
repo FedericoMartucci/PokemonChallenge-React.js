@@ -44,14 +44,6 @@
     gap: 8px;
 }
 
-.pokemon-type {
-    border-radius: 64px;
-    outline: auto;
-    outline-color: black;
-    padding: 4px;
-    color: var(--font-color-main);
-}
-
 @media (max-width: 400px) {
     .pokemon {
         width: 80vw;

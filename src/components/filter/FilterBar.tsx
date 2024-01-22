@@ -4,8 +4,6 @@ import { useState } from "react";
 import {
   ButtonType,
   FilterBarProps,
-  MAX_VALUE,
-  MIN_VALUE,
   Sizes,
 } from "../../utils/types";
 import { StyledFilterItem } from "./StyledFilterItem";
@@ -14,6 +12,7 @@ import { StyledP } from "../common/text/P";
 import { StyledContainer } from "../common/Container";
 import { StyledButton } from "../common/Button";
 import { StyledSelect } from "../common/text/Select";
+import { MAX_VALUE, MIN_VALUE } from "../../utils/constants";
 
 function valuetext(value: number) {
   return `${value}kg`;

@@ -1,3 +1,5 @@
+import { LightTheme } from "./theme";
+
 export type PokemonProps = {
   value: string;
   filters: Filter;
@@ -74,12 +76,7 @@ export enum ButtonType {
   APPLYFILTER = "APPLYFILTER",
 }
 
-export const MIN_VALUE: number = 0;
-export const MAX_VALUE: number = 1500;
-
-export const DEFAULT_FILTERS: Filter = {
-  isBaby: false,
-  color: "",
-  weight: [MIN_VALUE, MAX_VALUE],
-  types: [],
+export type ColorType = {
+  type: string;
+  color: string | undefined;
 };

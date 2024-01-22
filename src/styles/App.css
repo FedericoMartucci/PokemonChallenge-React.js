@@ -34,25 +34,9 @@
   font: 1rem Montserrat
 }
 
-body {
-  overflow-x: hidden;
-}
-
 Link {
   text-decoration: none;
 }
-
-.nav-bar {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--background-color-main);
-  width: 100vw;
-  height: 11.11vh;
-  z-index: 9999;
-}
-
 
 .pokemon-card-link,
 .pokemon-card-link:link,
@@ -78,13 +62,9 @@ body {
   display: flex;
   background-image: url(../assets/BackgroundImage.png);
   background-size: 240px 240px;
+  overflow-x: hidden;
 }
 
-main {
-  display: flex;
-  width: 100vw;
-  height: 88.89vh;
-}
  /* Filter.css */
 .box-item {
   display: flex;
