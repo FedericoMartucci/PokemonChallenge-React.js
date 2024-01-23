@@ -5,12 +5,14 @@ import { StyledLi } from "../../../common/Li";
 import { StyledUl } from "../../../common/Ul";
 import { StyledP } from "../../../common/text/P";
 import { StyledStatsContainer } from "./StyledStatsContainer";
+import { StyledProgressBar } from "./StyledProgressBar";
 
 interface StatsProps {
   pokemonInfo: any;
+  color: string | undefined;
 }
 
-export default function Stats({ pokemonInfo }: StatsProps) {
+export default function Stats({ pokemonInfo, color }: StatsProps) {
   return (
     <StyledStatsContainer>
       <StyledContainer width="90%" display="flex" justifyContent="space-around">
@@ -52,20 +54,19 @@ export default function Stats({ pokemonInfo }: StatsProps) {
                 size={Sizes.SMALL}
                 primary={true}
                 uppercase={true}
-                isStat={true}
+                stat={true}
               >
                 {statType.pokemon_v2_stat.name}
               </StyledP>
             </StyledContainer>
-            <div
-              className={`${pokemonInfo.type}-pokemon-type progress-bar`}
-              data-text={`${statType.base_stat}/300`}
-              style={
-                {
-                  "--to-width": `${statType.base_stat / 3}%`,
-                } as React.CSSProperties
-              }
-            />
+            <StyledProgressBar
+              backgroundColor={color}
+              towidth={statType.base_stat / 3}
+            >
+              <StyledP primary={true} size={Sizes.EXTRASMALL} stat={true}>
+                {statType.base_stat}/300
+              </StyledP>
+            </StyledProgressBar>
           </StyledLi>
         ))}
         <StyledLi>
@@ -79,7 +80,7 @@ export default function Stats({ pokemonInfo }: StatsProps) {
               size={Sizes.SMALL}
               primary={true}
               uppercase={true}
-              isStat={true}
+              stat={true}
             >
               Experience
             </StyledP>

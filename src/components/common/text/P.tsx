@@ -9,7 +9,7 @@ interface PProps {
   margin?: string;
   bold?: boolean;
   uppercase?: boolean;
-  isStat?: boolean;
+  stat?: boolean;
 }
 
 export const StyledP = styled.p<PProps>`
@@ -40,7 +40,7 @@ export const StyledP = styled.p<PProps>`
   ${(props: PProps) => props.margin !== undefined && `margin: ${props.margin};`}
 
   @media (max-width: 576px) {
-    font-size: ${(props: PProps) => props.isStat? "0.75rem" : "1.25rem"};
+    font-size: ${(props: PProps) => props.stat? "0.75rem" : "1.25rem"};
   }
 }
 `;

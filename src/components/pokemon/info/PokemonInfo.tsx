@@ -26,15 +26,16 @@ export default function PokemonInfo() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [pokemonInfo, setPokemonInfo] = useState<any | null>(null);
-  const colorType: ColorType | undefined = ColorTypes.find(
-    (item: ColorType) => item.type === pokemonInfo.type
-  );
+  const [colorType, setColorType] = useState<ColorType | undefined>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await getPokemonById(Number(id));
         setPokemonInfo(response);
+        setColorType(
+          ColorTypes.find((item: ColorType) => item.type === response.type)
+        );
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -81,7 +82,7 @@ export default function PokemonInfo() {
           id="shape"
         />
       </StyledInfoCard>
-      <Stats pokemonInfo={pokemonInfo} />
+      <Stats color={colorType?.color} pokemonInfo={pokemonInfo} />
     </StyledBackground>
   );
 }
