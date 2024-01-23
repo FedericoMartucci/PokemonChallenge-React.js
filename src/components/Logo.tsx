@@ -4,10 +4,10 @@ import { StyledImage } from "./common/Image";
 
 export default function Logo () {
     return (
-        <StyledA className='pokemon-card-link' href="/">
+        <StyledA href="/">
             <StyledImage
             width="100%"
-            height="100%"
+            maxheight="100%"
             src={PokedexLogo}
             alt="logo"/>
         </StyledA>

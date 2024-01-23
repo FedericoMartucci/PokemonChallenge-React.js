@@ -36,7 +36,7 @@ export default function SearchBar({ handleSearch }: SearchBarProps) {
         type="submit"
       >
         <StyledImage
-          maxWidth="100%"
+          maxwidth="100%"
           width="1.5rem"
           opacity={0.5}
           padding="4px"

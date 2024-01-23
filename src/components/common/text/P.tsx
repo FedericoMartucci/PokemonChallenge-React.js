@@ -33,7 +33,7 @@ export const StyledP = styled.p<PProps>`
   font-weight: ${(props: PProps) => (props.bold ? 700 : 400)};
   line-height: 110%;
   letter-spacing: -0.15px;
-  z-index: 1;
+  z-index: 2;
   text-transform: ${(props: PProps) =>
     props.uppercase ? "uppercase" : "capitalize"};
 

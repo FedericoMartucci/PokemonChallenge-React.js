@@ -1,32 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
-:root {
-  --normal-color-type: #A8A090;
-  --fighting-color-type: #A05038;
-  --flying-color-type: #98A8F0;
-  --poison-color-type: #B058A0;
-  --ground-color-type: #E9D6A4;
-  --rock-color-type: #B8A058;
-  --bug-color-type: #A8B820;
-  --ghost-color-type: #6060B0;
-  --steel-color-type: #A8A8C0;
-  --fire-color-type: #F05030;
-  --water-color-type: #3899F8;
-  --grass-color-type: #78C850;
-  --electric-color-type: #F8D030;
-  --psychic-color-type: #F870A0;
-  --ice-color-type: #58C8E0;
-  --dragon-color-type: #7860E0;
-  --dark-color-type: #7A5848;
-  --fairy-color-type: #E79FE7;
-  --unknown-color-type: #D2C21A;
-  --shadow-color-type: #5F5F5F;
-  --background-color-main: #FF0000;
-  --background-color-secondary: #FFFFFF;
-  --font-color-main: #FFFFFF;
-  --to-width: 0%;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -41,13 +14,8 @@ body {
   overflow-x: hidden;
 }
 
- /* Filter.css */
 .box-item {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-.filter-icon {
-  width: 50%;
 }

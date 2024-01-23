@@ -1,7 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import "./styles/App.css";
-import "./styles/ProgressBar.css";
 
 import PokemonInfo from "./components/pokemon/info/PokemonInfo";
 import Home from "./components/Home";

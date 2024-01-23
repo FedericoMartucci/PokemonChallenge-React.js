@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import WaveImg1 from "../../../assets/wave-1.svg";
 import WaveImg2 from "../../../assets/wave-2.svg";
 import WaveImg3 from "../../../assets/wave-3.svg";
@@ -15,12 +15,10 @@ import { StyledPokemonIdContainer } from "./StyledPokemonIdContainer";
 import { StyledA } from "../../common/A";
 import { StyledBackground } from "./StyledBackground";
 import EvolutionChain from "./evolution/EvolutionChain";
-import { StyledContainer } from "../../common/Container";
-import { StyledUl } from "../../common/Ul";
-import { StyledLi } from "../../common/Li";
 import Stats from "./stats/Stats";
 import { StyledInfoCard } from "./StyledInfoCard";
 import { ColorTypes } from "../../../utils/constants";
+import { StyledContainer } from "../../common/Container";
 
 export default function PokemonInfo() {
   const navigate = useNavigate();
@@ -61,7 +59,6 @@ export default function PokemonInfo() {
             #{id?.toString().padStart(2, "0")}
           </StyledP>
         </StyledPokemonIdContainer>
-
         <StyledImage
           height="80%"
           width="70%"
