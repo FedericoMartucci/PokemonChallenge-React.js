@@ -99,8 +99,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   @media (max-width: 576px) {
     ${(props: StyledButtonProps) =>
       (props.buttonType === ButtonType.FILTER ||
-        props.buttonType === ButtonType.APPLYFILTER) &&
-      "width: 8%;"}
+        props.buttonType === ButtonType.APPLYFILTER)?
+      "width: 8%;" : "width: 20%;"}
 
     ${(props: StyledButtonProps) =>
       props.buttonType === ButtonType.APPLYFILTER && "height: 10%; width: 40%;"}

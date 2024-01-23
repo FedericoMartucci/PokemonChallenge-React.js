@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
-export const StyledA = styled.a`
+interface AProps {
+  width?: string;
+  height?: string;
+}
+
+export const StyledA = styled.a<AProps>`
   display: block;
-  width: 26.04%;
-  max-height: 100%;
+  width: ${(props: AProps) => props.width ?? "26.04%"};
+  height: ${(props: AProps) => props.height ?? "100%"};
   align-items: center;
   margin-right: 8px;
   text-decoration: none;

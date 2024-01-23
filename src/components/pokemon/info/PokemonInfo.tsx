@@ -1,82 +1,114 @@
-import React, { useEffect, useState } from 'react'
-import WaveImg1 from '../../../assets/wave-1.svg'
-import WaveImg2 from '../../../assets/wave-2.svg'
-import WaveImg3 from '../../../assets/wave-3.svg'
-import WaveImg4 from '../../../assets/wave-4.svg'
-import WaveImg5 from '../../../assets/wave-5.svg'
-import BackIcon from '../../../assets/BackIcon.png'
-import { Link, NavLink, useParams } from 'react-router-dom'
-import { getPokemonById } from '../../../utils/pokemon-utils'
-import Loader from '../../loader/Loader'
-
+import React, { useEffect, useState } from "react";
+import WaveImg1 from "../../../assets/wave-1.svg";
+import WaveImg2 from "../../../assets/wave-2.svg";
+import WaveImg3 from "../../../assets/wave-3.svg";
+import WaveImg4 from "../../../assets/wave-4.svg";
+import WaveImg5 from "../../../assets/wave-5.svg";
+import BackIcon from "../../../assets/BackIcon.png";
+import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
+import { getPokemonById } from "../../../utils/pokemon-utils";
+import Loader from "../../loader/Loader";
+import { StyledP } from "../../common/text/P";
+import { Sizes } from "../../../utils/types";
+import { StyledImage } from "../../common/Image";
+import { StyledPokemonIdContainer } from "./StyledPokemonIdContainer";
+import { StyledA } from "../../common/A";
+import { StyledPokemonInfo } from "./StyledPokemonInfo";
+import EvolutionChain from "./evolution/EvolutionChain";
 
 export default function PokemonInfo() {
-    const { id } = useParams()
-    const [pokemonInfo, setPokemonInfo] = useState<any | null>(null);
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const [pokemonInfo, setPokemonInfo] = useState<any | null>(null);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await getPokemonById(Number(id));
-                setPokemonInfo(response);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            } 
-        };
-        fetchData();
-    }, [id]);
-    
-    return !pokemonInfo? (<Loader />) : (
-        <div className='pokemon-info-bg'>
-            <div className='evolution-chain'>
-                {pokemonInfo.evolution.map((evolution: {id: string, name: string}) => (
-                    <NavLink key={evolution.id} className={({isActive}) => isActive? `active-evolution ${pokemonInfo.type}-pokemon-type` : 'evolution'} to={`/pokemon/${evolution.id}`}>{evolution.name}</NavLink>
-                ))}
-            </div>
-            <div className={`${pokemonInfo.type}-pokemon-type pokemon-info-type`}>
-                <div className='pokemon-id'>
-                    <Link className='home-link' to={'/home'}>
-                        <img className='home-icon' src={BackIcon} alt="HomeIcon"/>
-                    </Link>
-                    <span>
-                        #{id?.toString().padStart(2, '0')}
-                    </span>
-                </div>
-                
-                <img className="pokemon-img-info" src={pokemonInfo.img} alt={`Pokemon ${pokemonInfo.name}`} />
-                <span className='pokemon-text-info'>{pokemonInfo.name}</span>
-                <img className='wave-img' src={WaveImg1} alt='WaveImg1'/>
-                <img className='wave-img' src={WaveImg2} alt='WaveImg2'/>
-                <img className='wave-img' src={WaveImg3} alt='WaveImg3'/>
-                <img className='wave-img' src={WaveImg4} alt='WaveImg4'/>
-                <img className='wave-img' src={WaveImg5} alt='WaveImg5' id='shape'/>
-            </div>
-            <div className='pokemon-info'>
-                <div className='pokemon-weight-height'>
-                    <div className='pokemon-weight'>
-                        <span>{pokemonInfo.weight/10} kg.</span>
-                        <span><strong>Weight</strong></span>
-                    </div>
-                    <div className='pokemon-height'>
-                        <span>{pokemonInfo.height/10} m.</span>
-                        <span><strong>Height</strong></span>
-                    </div>
-                </div>
-                <ul>
-                    { pokemonInfo.stats.map((statType: any, index: number) => (
-                            (
-                            <li className='pokemon-stat' key={index}>
-                                <span>{statType.pokemon_v2_stat.name}</span>
-                                <div className={`${pokemonInfo.type}-pokemon-type progress-bar`} data-text={`${statType.base_stat}/300`} style={{'--to-width':`${statType.base_stat/3}%`} as React.CSSProperties}></div>
-                            </li> )
-                            ))
-                    }
-                    <li className='pokemon-stat'>
-                        <span >Experience</span>
-                        <div className={`${pokemonInfo.type}-pokemon-type progress-bar`} data-text={`${pokemonInfo.base_experience}/300`} style={{'--to-width':`${pokemonInfo.base_experience/3}%`} as React.CSSProperties}></div>
-                    </li>
-                </ul>
-            </div>
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getPokemonById(Number(id));
+        setPokemonInfo(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, [id]);
+
+  return !pokemonInfo ? (
+    <Loader />
+  ) : (
+    <StyledPokemonInfo>
+      <EvolutionChain pokemonInfo={pokemonInfo}/>
+      <div className={`${pokemonInfo.type}-pokemon-type pokemon-info-type`}>
+        <StyledPokemonIdContainer>
+          <StyledA
+            width={"2.5rem"}
+            height={"2.5rem"}
+            onClick={() => navigate(`/home`)}
+          >
+            <StyledImage width="100%" src={BackIcon} alt="Go to home" />
+          </StyledA>
+          <StyledP bold={true} size={Sizes.EXTRALARGE}>
+            #{id?.toString().padStart(2, "0")}
+          </StyledP>
+        </StyledPokemonIdContainer>
+
+        <StyledImage
+          height="80%"
+          width="70%"
+          src={pokemonInfo.img}
+          alt={`Pokemon ${pokemonInfo.name}`}
+        />
+        <span className="pokemon-text-info">{pokemonInfo.name}</span>
+        <img className="wave-img" src={WaveImg1} alt="WaveImg1" />
+        <img className="wave-img" src={WaveImg2} alt="WaveImg2" />
+        <img className="wave-img" src={WaveImg3} alt="WaveImg3" />
+        <img className="wave-img" src={WaveImg4} alt="WaveImg4" />
+        <img className="wave-img" src={WaveImg5} alt="WaveImg5" id="shape" />
+      </div>
+      <div className="pokemon-info">
+        <div className="pokemon-weight-height">
+          <div className="pokemon-weight">
+            <span>{pokemonInfo.weight / 10} kg.</span>
+            <span>
+              <strong>Weight</strong>
+            </span>
+          </div>
+          <div className="pokemon-height">
+            <span>{pokemonInfo.height / 10} m.</span>
+            <span>
+              <strong>Height</strong>
+            </span>
+          </div>
         </div>
-    )
+        <ul>
+          {pokemonInfo.stats.map((statType: any, index: number) => (
+            <li className="pokemon-stat" key={index}>
+              <span>{statType.pokemon_v2_stat.name}</span>
+              <div
+                className={`${pokemonInfo.type}-pokemon-type progress-bar`}
+                data-text={`${statType.base_stat}/300`}
+                style={
+                  {
+                    "--to-width": `${statType.base_stat / 3}%`,
+                  } as React.CSSProperties
+                }
+              ></div>
+            </li>
+          ))}
+          <li className="pokemon-stat">
+            <span>Experience</span>
+            <div
+              className={`${pokemonInfo.type}-pokemon-type progress-bar`}
+              data-text={`${pokemonInfo.base_experience}/300`}
+              style={
+                {
+                  "--to-width": `${pokemonInfo.base_experience / 3}%`,
+                } as React.CSSProperties
+              }
+            ></div>
+          </li>
+        </ul>
+      </div>
+    </StyledPokemonInfo>
+  );
 }

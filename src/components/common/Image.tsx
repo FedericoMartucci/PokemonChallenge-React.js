@@ -15,5 +15,6 @@ export const StyledImage = styled.img<ImgProps>`
     max-width: ${props.maxWidth ?? "auto"};
     opacity: ${props.opacity ?? "1"};
     padding: ${props.padding ?? "0"};
+    z-index: 1;
   `}
 `;

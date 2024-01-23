@@ -1,14 +1,3 @@
-.evolution-chain {
-    width: 50%;
-    height: 15%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
 .evolution:active,
 .active-evolution:active {
     box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.4);

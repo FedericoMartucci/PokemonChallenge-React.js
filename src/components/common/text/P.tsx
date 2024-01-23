@@ -7,6 +7,7 @@ interface PProps {
   size: Sizes;
   theme: Theme;
   margin?: string;
+  bold?: boolean;
 }
 
 export const StyledP = styled.p<PProps>`
@@ -27,7 +28,7 @@ export const StyledP = styled.p<PProps>`
     }
   }};
   font-style: normal;
-  font-weight: 400;
+  font-weight: ${(props: PProps) => props.bold? 700 : 400};
   line-height: 110%;
   letter-spacing: -0.15px;
   text-transform: capitalize;
