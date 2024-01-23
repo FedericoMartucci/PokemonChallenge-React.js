@@ -8,6 +8,7 @@ interface PProps {
   theme: Theme;
   margin?: string;
   bold?: boolean;
+  uppercase?: boolean;
 }
 
 export const StyledP = styled.p<PProps>`
@@ -28,10 +29,11 @@ export const StyledP = styled.p<PProps>`
     }
   }};
   font-style: normal;
-  font-weight: ${(props: PProps) => props.bold? 700 : 400};
+  font-weight: ${(props: PProps) => (props.bold ? 700 : 400)};
   line-height: 110%;
   letter-spacing: -0.15px;
-  text-transform: capitalize;
+  text-transform: ${(props: PProps) =>
+    props.uppercase ? "uppercase" : "capitalize"};
 
   ${(props: PProps) => props.margin !== undefined && `margin: ${props.margin};`}
   

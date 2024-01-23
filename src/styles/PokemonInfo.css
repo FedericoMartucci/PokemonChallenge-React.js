@@ -26,34 +26,12 @@
     border-bottom-right-radius: 64px;
 }
 
-.pokemon-weight-height {
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.pokemon-weight,
-.pokemon-height {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
 .pokemon-stat {
     display: flex;
     text-transform: uppercase;
     justify-content: space-between;
     width: 100%;
     margin-top: 4px;
-}
-
-.pokemon-info ul {
-    width: 65%;
-}
-
-.pokemon-info ul li {
-    display: flex;
-    align-items: center;
 }
 
 

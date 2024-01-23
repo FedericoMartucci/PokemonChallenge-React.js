@@ -5,7 +5,7 @@ import WaveImg3 from "../../../assets/wave-3.svg";
 import WaveImg4 from "../../../assets/wave-4.svg";
 import WaveImg5 from "../../../assets/wave-5.svg";
 import BackIcon from "../../../assets/BackIcon.png";
-import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getPokemonById } from "../../../utils/pokemon-utils";
 import Loader from "../../loader/Loader";
 import { StyledP } from "../../common/text/P";
@@ -15,6 +15,9 @@ import { StyledPokemonIdContainer } from "./StyledPokemonIdContainer";
 import { StyledA } from "../../common/A";
 import { StyledPokemonInfo } from "./StyledPokemonInfo";
 import EvolutionChain from "./evolution/EvolutionChain";
+import { StyledContainer } from "../../common/Container";
+import { StyledUl } from "../../common/Ul";
+import { StyledLi } from "../../common/Li";
 
 export default function PokemonInfo() {
   const navigate = useNavigate();
@@ -37,7 +40,7 @@ export default function PokemonInfo() {
     <Loader />
   ) : (
     <StyledPokemonInfo>
-      <EvolutionChain pokemonInfo={pokemonInfo}/>
+      <EvolutionChain pokemonInfo={pokemonInfo} />
       <div className={`${pokemonInfo.type}-pokemon-type pokemon-info-type`}>
         <StyledPokemonIdContainer>
           <StyledA
@@ -66,24 +69,42 @@ export default function PokemonInfo() {
         <img className="wave-img" src={WaveImg5} alt="WaveImg5" id="shape" />
       </div>
       <div className="pokemon-info">
-        <div className="pokemon-weight-height">
-          <div className="pokemon-weight">
-            <span>{pokemonInfo.weight / 10} kg.</span>
-            <span>
-              <strong>Weight</strong>
-            </span>
-          </div>
-          <div className="pokemon-height">
-            <span>{pokemonInfo.height / 10} m.</span>
-            <span>
-              <strong>Height</strong>
-            </span>
-          </div>
-        </div>
-        <ul>
+        <StyledContainer
+          width="90%"
+          display="flex"
+          justifyContent="space-around"
+        >
+          <StyledContainer
+            display="flex"
+            flexDirection="column"
+            textAlign="center"
+          >
+            <StyledP primary={true} size={Sizes.SMALL}>
+              {pokemonInfo.weight / 10}kg.
+            </StyledP>
+            <StyledP primary={true} size={Sizes.SMALL}>
+              Weight
+            </StyledP>
+          </StyledContainer>
+          <StyledContainer
+            display="flex"
+            flexDirection="column"
+            textAlign="center"
+          >
+            <StyledP primary={true} size={Sizes.SMALL}>
+              {pokemonInfo.height / 10}m.
+            </StyledP>
+            <StyledP primary={true} size={Sizes.SMALL}>
+              Height
+            </StyledP>
+          </StyledContainer>
+        </StyledContainer>
+        <StyledUl>
           {pokemonInfo.stats.map((statType: any, index: number) => (
-            <li className="pokemon-stat" key={index}>
-              <span>{statType.pokemon_v2_stat.name}</span>
+            <StyledLi className="pokemon-stat" key={index}>
+              <StyledP size={Sizes.SMALL} primary={true} uppercase={true}>
+                {statType.pokemon_v2_stat.name}
+              </StyledP>
               <div
                 className={`${pokemonInfo.type}-pokemon-type progress-bar`}
                 data-text={`${statType.base_stat}/300`}
@@ -93,10 +114,12 @@ export default function PokemonInfo() {
                   } as React.CSSProperties
                 }
               ></div>
-            </li>
+            </StyledLi>
           ))}
-          <li className="pokemon-stat">
-            <span>Experience</span>
+          <StyledLi className="pokemon-stat">
+            <StyledP size={Sizes.SMALL} primary={true} uppercase={true}>
+              Experience
+            </StyledP>
             <div
               className={`${pokemonInfo.type}-pokemon-type progress-bar`}
               data-text={`${pokemonInfo.base_experience}/300`}
@@ -106,8 +129,8 @@ export default function PokemonInfo() {
                 } as React.CSSProperties
               }
             ></div>
-          </li>
-        </ul>
+          </StyledLi>
+        </StyledUl>
       </div>
     </StyledPokemonInfo>
   );
