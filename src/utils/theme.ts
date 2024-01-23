@@ -2,6 +2,7 @@ export const LightTheme: Partial<Theme> = {
   background: {
     main: "#FF0000",
     secondary: "#FFFFFF",
+    search: "#EEEEEE",
   },
   types: {
     normal: "#A8A090",
@@ -40,6 +41,10 @@ export const LightTheme: Partial<Theme> = {
     large: "32px",
     extralarge: "48px",
   },
+  shadow: {
+    white: "rgba(255, 255, 255, 0.4)",
+    black: "rgba(0, 0, 0, 0.4)",
+  },
   outline: {
     black: "#000000",
     white: "#FFFFFF",
@@ -50,6 +55,7 @@ export type Theme = {
   background: {
     main: string;
     secondary: string;
+    search: string;
   };
   types: {
     normal: string;
@@ -88,6 +94,10 @@ export type Theme = {
     large: string;
     extralarge: string;
   };
+  shadow: {
+    black: string;
+    white: string;
+  }
   outline: {
     black: string;
     white: string;

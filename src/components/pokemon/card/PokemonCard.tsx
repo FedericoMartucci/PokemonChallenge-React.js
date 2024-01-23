@@ -9,6 +9,7 @@ import { StyledP } from "../../common/text/P";
 import { StyledImage } from "../../common/Image";
 import { StyledPokemonCard } from "./StyledPokemonCard";
 import { StyledA } from "../../common/A";
+import { StyledPokemonTypes } from "./StyledPokemonTypes";
 
 export default function PokemonCard({
   id,
@@ -36,18 +37,11 @@ export default function PokemonCard({
           <StyledP primary={true} size={Sizes.SMALL} margin="8px">
             {name}
           </StyledP>
-          <StyledContainer
-            display="flex"
-            flexDirection="row"
-            justify-Content="space-evenly"
-            alignItems="center"
-            textTransform="capitalize"
-            gap="8px"
-          >
+          <StyledPokemonTypes>
             {types.map((type: string, index: number) => (
               <PokemonType type={type} key={index} />
             ))}
-          </StyledContainer>
+          </StyledPokemonTypes>
         </StyledPokemonCard>
       </StyledA>
     </StyledContainer>
