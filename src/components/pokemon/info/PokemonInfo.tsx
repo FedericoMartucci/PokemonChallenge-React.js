@@ -9,7 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getPokemonById } from "../../../utils/pokemon-utils";
 import Loader from "../../loader/Loader";
 import { StyledP } from "../../common/text/P";
-import { Sizes } from "../../../utils/types";
+import { ColorType, Sizes } from "../../../utils/types";
 import { StyledImage } from "../../common/Image";
 import { StyledPokemonIdContainer } from "./StyledPokemonIdContainer";
 import { StyledA } from "../../common/A";
@@ -19,11 +19,16 @@ import { StyledContainer } from "../../common/Container";
 import { StyledUl } from "../../common/Ul";
 import { StyledLi } from "../../common/Li";
 import Stats from "./stats/Stats";
+import { StyledInfoCard } from "./StyledInfoCard";
+import { ColorTypes } from "../../../utils/constants";
 
 export default function PokemonInfo() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [pokemonInfo, setPokemonInfo] = useState<any | null>(null);
+  const colorType: ColorType | undefined = ColorTypes.find(
+    (item: ColorType) => item.type === pokemonInfo.type
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,7 +47,7 @@ export default function PokemonInfo() {
   ) : (
     <StyledBackground>
       <EvolutionChain pokemonInfo={pokemonInfo} />
-      <div className={`${pokemonInfo.type}-pokemon-type pokemon-info-type`}>
+      <StyledInfoCard backgroundColor={colorType?.color}>
         <StyledPokemonIdContainer>
           <StyledA
             width={"2.5rem"}
@@ -62,14 +67,21 @@ export default function PokemonInfo() {
           src={pokemonInfo.img}
           alt={`Pokemon ${pokemonInfo.name}`}
         />
-        <span className="pokemon-text-info">{pokemonInfo.name}</span>
-        <img className="wave-img" src={WaveImg1} alt="WaveImg1" />
-        <img className="wave-img" src={WaveImg2} alt="WaveImg2" />
-        <img className="wave-img" src={WaveImg3} alt="WaveImg3" />
-        <img className="wave-img" src={WaveImg4} alt="WaveImg4" />
-        <img className="wave-img" src={WaveImg5} alt="WaveImg5" id="shape" />
-      </div>
-      <Stats pokemonInfo={pokemonInfo}/>
+        <StyledP size={Sizes.LARGE} primary={true}>
+          {pokemonInfo.name}
+        </StyledP>
+        <StyledImage className="wave-img" src={WaveImg1} alt="WaveImg1" />
+        <StyledImage className="wave-img" src={WaveImg2} alt="WaveImg2" />
+        <StyledImage className="wave-img" src={WaveImg3} alt="WaveImg3" />
+        <StyledImage className="wave-img" src={WaveImg4} alt="WaveImg4" />
+        <StyledImage
+          className="wave-img"
+          src={WaveImg5}
+          alt="WaveImg5"
+          id="shape"
+        />
+      </StyledInfoCard>
+      <Stats pokemonInfo={pokemonInfo} />
     </StyledBackground>
   );
 }

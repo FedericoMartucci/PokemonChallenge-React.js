@@ -9,6 +9,7 @@ interface PProps {
   margin?: string;
   bold?: boolean;
   uppercase?: boolean;
+  isStat?: boolean;
 }
 
 export const StyledP = styled.p<PProps>`
@@ -32,13 +33,14 @@ export const StyledP = styled.p<PProps>`
   font-weight: ${(props: PProps) => (props.bold ? 700 : 400)};
   line-height: 110%;
   letter-spacing: -0.15px;
+  z-index: 1;
   text-transform: ${(props: PProps) =>
     props.uppercase ? "uppercase" : "capitalize"};
 
   ${(props: PProps) => props.margin !== undefined && `margin: ${props.margin};`}
-  
+
   @media (max-width: 576px) {
-    font-size: 1.25rem;
+    font-size: ${(props: PProps) => props.isStat? "0.75rem" : "1.25rem"};
   }
 }
 `;

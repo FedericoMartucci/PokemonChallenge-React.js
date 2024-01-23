@@ -1,12 +1,31 @@
-#shape {
+import styled from "styled-components";
+
+interface InfoCardProps {
+  backgroundColor: string | undefined;
+}
+
+export const StyledInfoCard = styled.div<InfoCardProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  height: 40vh;
+  border-top-right-radius: 64px;
+  border-top-left-radius: 64px;
+  background-color: ${(props: InfoCardProps) => props.backgroundColor};
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    height: 30vh;
+  }
+
+
+  #shape {
     margin-top: -13%;
 }
 
-.wave-img {
-    width: 100%;
-}
 
-.pokemon-info-type .wave-img:nth-child(4) {
+& .wave-img:nth-child(4) {
     opacity: 0.4;
     margin-top: -15%;
     animation: move-1 5s infinite;
@@ -19,7 +38,7 @@
 
 }
 
-.pokemon-info-type .wave-img:nth-child(5) {
+& .wave-img:nth-child(5) {
     opacity: 0.3;
     margin-top: -12%;
     animation: move-2 4s infinite;
@@ -33,7 +52,7 @@
 
 }
 
-.pokemon-info-type .wave-img:nth-child(6) {
+& .wave-img:nth-child(6) {
     opacity: 0.2;
     margin-top: -12%;
     animation: move-3 3.5s infinite;
@@ -46,7 +65,7 @@
 
 }
 
-.pokemon-info-type .wave-img:nth-child(7) {
+& .wave-img:nth-child(7) {
     opacity: 0.3;
     margin-top: -12%;
     animation: move-4 3s infinite;
@@ -60,7 +79,7 @@
 }
 
 @media (min-width: 992px) and (max-width: 1440px) {
-    .pokemon-info-type .wave-img:nth-child(4) {
+    & .wave-img:nth-child(4) {
         margin-top: -17%;
     }
 }
@@ -70,7 +89,7 @@
         margin-top: -14%;
     }
 
-    .pokemon-info-type .wave-img:nth-child(4) {
+    & .wave-img:nth-child(4) {
         margin-top: -18%;
     }
 }
@@ -80,13 +99,14 @@
         margin-top: -15%;
     }
 
-    .pokemon-info-type .wave-img:nth-child(4) {
+    & .wave-img:nth-child(4) {
         margin-top: -20%;
     }
 }
 
 @media (max-width: 576px) {
-    .pokemon-info-type .wave-img:nth-child(4) {
+    & .wave-img:nth-child(4) {
         margin-top: -25%;
     }
 }
+`;
