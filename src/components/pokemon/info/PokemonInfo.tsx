@@ -46,7 +46,7 @@ export default function PokemonInfo() {
     <Loader />
   ) : (
     <StyledBackground>
-      <EvolutionChain pokemonInfo={pokemonInfo} />
+      <EvolutionChain color={colorType?.color} pokemonInfo={pokemonInfo} />
       <StyledInfoCard backgroundColor={colorType?.color}>
         <StyledPokemonIdContainer>
           <StyledA

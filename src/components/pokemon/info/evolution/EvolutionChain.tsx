@@ -1,21 +1,29 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { StyledEvolutionChain } from "./StyledEvolutionChain";
+import { LightTheme } from "../../../../utils/theme";
 
 interface EvolutionChainProps {
   pokemonInfo: any;
+  color: string | undefined;
 }
 
-export default function EvolutionChain({ pokemonInfo }: EvolutionChainProps) {
+export default function EvolutionChain({
+  pokemonInfo,
+  color,
+}: EvolutionChainProps) {
   return (
     <StyledEvolutionChain>
       {pokemonInfo.evolution.map((evolution: { id: string; name: string }) => (
         <NavLink
           key={evolution.id}
-          className={({ isActive }) =>
+          style={({ isActive }) =>
             isActive
-              ? `active-evolution ${pokemonInfo.type}-pokemon-type`
-              : "evolution"
+              ? { backgroundColor: color }
+              : { backgroundColor: LightTheme.background?.secondary }
+          }
+          className={({ isActive }) =>
+            isActive ? "active-evolution" : "evolution"
           }
           to={`/pokemon/${evolution.id}`}
         >
