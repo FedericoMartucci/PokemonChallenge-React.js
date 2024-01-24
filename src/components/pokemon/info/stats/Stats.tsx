@@ -85,15 +85,14 @@ export default function Stats({ pokemonInfo, color }: StatsProps) {
               Experience
             </StyledP>
           </StyledContainer>
-          <div
-            className={`${pokemonInfo.type}-pokemon-type progress-bar`}
-            data-text={`${pokemonInfo.base_experience}/300`}
-            style={
-              {
-                "--to-width": `${pokemonInfo.base_experience / 3}%`,
-              } as React.CSSProperties
-            }
-          />
+          <StyledProgressBar
+            backgroundColor={color}
+            towidth={pokemonInfo.base_experience / 3}
+          >
+            <StyledP primary={true} size={Sizes.EXTRASMALL} stat={true}>
+              {pokemonInfo.base_experience}/300
+            </StyledP>
+          </StyledProgressBar>
         </StyledLi>
       </StyledUl>
     </StyledStatsContainer>
