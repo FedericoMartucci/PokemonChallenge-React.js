@@ -1,20 +1,21 @@
-import PokemonCard from "./PokemonCard";
-import Loader from "./Loader";
+import PokemonCard from "./card/PokemonCard";
+import Loader from "../loader/Loader";
 
-import { PokemonProps } from "../utils/types";
+import { PokemonProps } from "../../utils/types";
 
-import usePokemon from "../hooks/usePokemon";
+import usePokemon from "../../hooks/usePokemon";
+import { StyledPokemonContainer } from "./StyledPokemonContainer";
 
 export default function Pokemon ({ value, filters }: PokemonProps) {
     const { isLoading, pokemons } = usePokemon({ value, filters });
     
     return isLoading? (<Loader/>) : (
-        <div className="pokemon-list">
+        <StyledPokemonContainer>
             {
                 pokemons.map((pokemon) => (
                     <PokemonCard key={pokemon.id} {...pokemon}/>
                 ))
             }
-        </div>
+        </StyledPokemonContainer>
     );
 }

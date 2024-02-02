@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 
 import { getPokemons } from '../utils/pokemon-utils';
 
-import { DEFAULT_FILTERS, Filter } from '../utils/types';
+import { Filter } from '../utils/types';
 import { PokemonProps } from '../utils/types';
+import { DEFAULT_FILTERS } from '../utils/constants';
 
 export default function usePokemon({ value, filters }: PokemonProps) {
     const [isLoading, setIsLoading] = useState (true)

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-import { DEFAULT_FILTERS, Filter } from '../utils/types';
+import { Filter } from '../utils/types';
+import { DEFAULT_FILTERS } from '../utils/constants';
 
 export default function useHome() {
     const [value, setValue] = useState<string>('');

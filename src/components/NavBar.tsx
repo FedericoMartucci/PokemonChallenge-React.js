@@ -1,27 +1,47 @@
-import FilterButton from "./FilterButton";
-import Logo from "./Logo"
-import SearchBar from "./SearchBar";
-import FilterBar from "./FilterBar";
+import FilterButton from "./filter-button/FilterButton";
+import Logo from "./Logo";
+import SearchBar from "./search-bar/SearchBar";
+import FilterBar from "./filter/FilterBar";
 
 import { NavBarProps } from "../utils/types";
 
 import useNavBar from "../hooks/useNavBar";
+import { StyledContainer } from "./common/Container";
+import { LightTheme } from "../utils/theme";
 
-export default function NavBar ({handleValueSearched, handleSearchWithFilters}: NavBarProps) {
-    const { handleFilter, handleFilters, handleSearch, displayFilter, colors, types } = useNavBar({handleValueSearched, handleSearchWithFilters});
+export default function NavBar({
+  handleValueSearched,
+  handleSearchWithFilters,
+}: NavBarProps) {
+  const {
+    handleFilter,
+    handleFilters,
+    handleSearch,
+    displayFilter,
+    colors,
+    types,
+  } = useNavBar({ handleValueSearched, handleSearchWithFilters });
 
-    return (
-        <nav>
-            <div className="nav-bar">
-                <FilterButton handleFilter={handleFilter}></FilterButton>
-                <SearchBar handleSearch={handleSearch}></SearchBar>
-                <Logo></Logo>
-            </div>
-            {
-                displayFilter && (
-                    <FilterBar handleFilters={handleFilters} colors={colors} pokemonTypes={types}/>
-                )
-            }
-        </nav>
-    );
+  return (
+    <nav>
+      <StyledContainer
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        backgroundColor={LightTheme.background?.main}
+        height="11.11vh"
+      >
+        <FilterButton handleFilter={handleFilter} />
+        <SearchBar handleSearch={handleSearch} />
+        <Logo />
+      </StyledContainer>
+      {displayFilter && (
+        <FilterBar
+          handleFilters={handleFilters}
+          colors={colors}
+          pokemonTypes={types}
+        />
+      )}
+    </nav>
+  );
 }

@@ -1,9 +1,15 @@
-import PokedexLogo from "../images/Logo.png"
+import PokedexLogo from "../assets/Logo.png"
+import { StyledA } from "./common/A";
+import { StyledImage } from "./common/Image";
 
 export default function Logo () {
     return (
-        <a className='pokemon-card-link' href="/">
-            <img id="logo" src={PokedexLogo} alt="logo"/>
-        </a>
+        <StyledA href="/">
+            <StyledImage
+            width="100%"
+            maxheight="100%"
+            src={PokedexLogo}
+            alt="logo"/>
+        </StyledA>
     );
 }
